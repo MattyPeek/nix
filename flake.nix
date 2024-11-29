@@ -31,9 +31,26 @@
           pkgs.nerd-fonts.hack
         ];
 
-      # Brew
-      
-      
+      homebrew = {
+        enable = true;
+        brews = [
+          "mas"
+        ];
+        casks = [
+          "hammerspoon"
+          "firefox"
+          "iina"
+          "the-unarchiver"
+          "imageoptim"
+          "gimp"
+          "disk-inventory-x"
+        ];
+        masApps = {
+          "Keka" = 470158793;
+        };
+        #onActivation.cleanup = "zap";
+      }; 
+          
 
       system.activationScripts.applications.text = let
         env = pkgs.buildEnv {
