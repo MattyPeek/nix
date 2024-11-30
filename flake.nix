@@ -112,14 +112,14 @@
 
 
       system.defaults = {
-        "com.apple.finder.FXPreferredViewStyle" = "Nlsv";
-        "com.apple.finder.ShowToolbar" = true;
-        "com.apple.finder.ShowStatusBar" = true;
-        "com.apple.finder.ShowPathbar" = true;
         dock.autohide = true;
         dock.mru-spaces = false;
         loginwindow.LoginwindowText = "brm brm";
-      }
+        finder.FXPreferredViewStyle = "Nlsv";
+        finder.ShowToolbar = true;
+        finder.ShowStatusBar = true;
+        finder.ShowPathbar = true;
+      };
 
       security.pam.enableSudoTouchIdAuth = true;
 
