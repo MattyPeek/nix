@@ -8,14 +8,17 @@
     nix-homebrew.url = "github:zhaofengli-wip/nix-homebrew";
   };
 
-  outputs = inputs@{ self, nix-darwin, nixpkgs, nix-homebrew }:
+  outputs = inputs@{ self, nix-darwin, nixpkgs, nix-homebrew, ... }:
   let
-    configuration = { pkgs, config, ... }: {
+    mainConfig = { pkgs, config, ... }: {
       
-      # List packages installed in system profile. To search by name, run:
-      # $ nix-env -qaP | grep wget
-      
+      nixpkgs.hostPlatform = "aarch64-darwin";
       nixpkgs.config.allowUnfree = true;
+      
+      nix.settings = {
+        #experimental-features = [ "nix-command" "flakes" ];
+        #trusted-users = [ "root" "@wheel" ];
+      };
 
       environment.systemPackages =
         [ 
@@ -111,17 +114,12 @@
         '';
 
 
-      system.defaults = {
-        dock.autohide = true;
-        dock.mru-spaces = false;
-        loginwindow.LoginwindowText = "brm brm";
-        finder.FXPreferredViewStyle = "Nlsv";
-        finder.ShowToolbar = true;
-        finder.ShowStatusBar = true;
-        finder.ShowPathbar = true;
-      };
 
       security.pam.enableSudoTouchIdAuth = true;
+
+      services.sketchybar = {
+        enable = false;
+      };
 
       services.nix-daemon.enable = true;
 
@@ -139,8 +137,6 @@
       # $ darwin-rebuild changelog
       system.stateVersion = 5;
 
-      # The platform the configuration will be used on.
-      nixpkgs.hostPlatform = "aarch64-darwin";
     };
   in
   {
@@ -148,7 +144,7 @@
     # $ darwin-rebuild build --flake .#simple
     darwinConfigurations."mcbp" = nix-darwin.lib.darwinSystem {
       modules = [ 
-        configuration 
+        mainConfig 
         nix-homebrew.darwinModules.nix-homebrew
         {
           nix-homebrew = {
@@ -158,6 +154,7 @@
             autoMigrate = true; # If homebrew was already installed
           };
         }
+        ./system/settings.nix
       ];
     };
 
