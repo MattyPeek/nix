@@ -35,6 +35,33 @@
         enable = true;
         brews = [
           "mas"
+          "ansible"
+          "asciiquarium"
+          "bash"
+          "bat"
+          "cmatrix"
+          "dialog"
+          "docker"
+          "ffmpeg"
+          "freerdp"
+          "gnupg"
+          "handbrake"
+          "jq"
+          "midnight-commander"
+          "ncdu"
+          "ncurses"
+          "neofetch"
+          "openssh"
+          "openvpn"
+          "pinentry"
+          "pinentry-mac"
+          "python"
+          "pkgconf"
+          #"skhd" tap needed
+          "socat"
+          "sqlite"
+          "telnet"
+          "wget"
         ];
         casks = [
           "hammerspoon"
@@ -44,11 +71,22 @@
           "imageoptim"
           "gimp"
           "disk-inventory-x"
+          "blender"
+          "handbrake"
+          "obs"
+          "inkscape"
+          "iterm2"
+          "openzfs"
+          "unetbootin"
+          "alt-tab"
+          "raycast"
         ];
         masApps = {
           "Keka" = 470158793;
         };
-        #onActivation.cleanup = "zap";
+        onActivation.cleanup = "zap";
+        onActivation.autoUpdate = true;
+        onActivation.upgrade = true;
       }; 
           
 
@@ -72,6 +110,18 @@
           done
         '';
 
+
+      system.defaults = {
+        "com.apple.finder.FXPreferredViewStyle" = "Nlsv";
+        "com.apple.finder.ShowToolbar" = true;
+        "com.apple.finder.ShowStatusBar" = true;
+        "com.apple.finder.ShowPathbar" = true;
+        dock.autohide = true;
+        dock.mru-spaces = false;
+        loginwindow.LoginwindowText = "brm brm";
+      }
+
+      security.pam.enableSudoTouchIdAuth = true;
 
       services.nix-daemon.enable = true;
 
