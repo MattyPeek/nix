@@ -16,6 +16,7 @@
     {
       darwinConfigurations = {
         mcbp = import ./darwinConfigurations/mcbp.nix flakeContext;
+        #mcbp2 = import ./darwinConfigurations/mcbp2.nix flakeContext;
       };
       #homeConfigurations = {
         #maty = import ./homeConfigurations/maty.nix flakeContext;
