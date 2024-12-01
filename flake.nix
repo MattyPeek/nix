@@ -27,11 +27,8 @@
       darwinPackages = self.darwinConfigurations."mcbp".pkgs;
       "mcbp" = nix-darwin.lib.darwinSystem {
         modules = [ 
-          commonConfig 
-          ./system/mcbp
-          ./packages/mcbp
-          ./services/mcbp
-          nix-homebrew.darwinModules.nix-homebrew {
+          commonConfig # Main flake defined config 
+          nix-homebrew.darwinModules.nix-homebrew { # homebrew setup
             nix-homebrew = {
               enable = true;
               enableRosetta = true; # For apple silicon
@@ -39,6 +36,13 @@
               autoMigrate = true; # If homebrew was already installed
             };
           }
+          # Included files:
+          #./system/mcbp
+          #./packages/mcbp
+          #./services/mcbp
+          ./modules/mcbp/packages.nix
+          ./modules/mcbp/services.nix
+          ./modules/mcbp/system.nix
         ];
       };
       "mcbp2" = nix-darwin.lib.darwinSystem {
