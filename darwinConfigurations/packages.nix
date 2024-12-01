@@ -5,6 +5,9 @@
        pkgs.nerd-fonts.hack
      ];
    };
+   environment.systemPackages = [
+       pkgs.neovim
+     ];
    homebrew = {
      brews = [
        "mas"
