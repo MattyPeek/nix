@@ -13,7 +13,7 @@
     in
     {
       darwinConfigurations = {
-        mcbp = import ./darwinConfigurations/mcbp.nix flakeContext;
+        mcbp = import ./config/mcbp.nix flakeContext;
         #mcbp2 = import ./darwinConfigurations/mcbp2.nix flakeContext;
       };
     };
