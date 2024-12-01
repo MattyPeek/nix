@@ -15,17 +15,6 @@
         experimental-features = [ "nix-command" "flakes" ];
         trusted-users = [ "root" "@wheel" ];
       };
-      
-      system.defaults = {
-      dock.autohide = true;
-      dock.mru-spaces = false;
-      loginwindow.LoginwindowText = "brm brm";
-      finder.FXPreferredViewStyle = "Nlsv";
-      finder.ShowToolbar = true;
-      finder.ShowStatusBar = true;
-      finder.ShowPathbar = true;
-      };
-
       # Set Git commit hash for darwin-version.
       system.configurationRevision = self.rev or self.dirtyRev or null;
 
