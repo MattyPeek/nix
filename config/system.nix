@@ -29,6 +29,15 @@
       loginwindow = {
         LoginwindowText = "brm brm";
       };
+      controlcenter.BatteryShowPercentage = true;
+      controlcenter.Sound = true;
+      controlcenter.Bluetooth = true;
+      hitoolbox.AppleFnUsageType = "Show Emoji & Symbols";
+    };
+    keyboard = {
+      remapCapsLockToEscape = true;
+      swapLeftCtrlAndFn = false;
+      enableKeyMapping = true;
     };
     stateVersion = 5;
   };
