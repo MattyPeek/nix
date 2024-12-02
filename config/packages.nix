@@ -5,73 +5,99 @@
        pkgs.nerd-fonts.hack
      ];
    };
-   environment.systemPackages = [
-       pkgs.neovim
+   environment.systemPackages = with pkgs; [
+       bash-completion
+       nix-bash-completions
+       neovim
+       pinentry_mac
+       pinentry-curses
+       cmatrix
+       dialog
+       socat
+       ansible
+       asciiquarium
+       bat
+       inetutils
+       socat
+       docker
+       ffmpeg
+       #handbrake # broken
+       jq
+       #mas # installed as HB dependency
+       freerdp
+       mc
+       ncdu
+       ncurses
+       neofetch
+       python3Full
+       pkgconf
+       sqlite
+       wget
+       openssh
+       gnupg
+       openvpn
+       skhd
+       iina
+       #blender # broken
+       gimp
+       inkscape
+       iterm2
+       #disk-inventory-x # x86_64
+       raycast
+       alt-tab-macos
+       #firefox
      ];
    homebrew = {
-     brews = [
-       "mas"
-       "ansible"
-       "asciiquarium"
-       "bash"
-       "bat"
-       "cmatrix"
-       "dialog"
-       "docker"
-       "ffmpeg"
-       "freerdp"
-       "gnupg"
-       "handbrake"
-       "jq"
-       "midnight-commander"
-       "ncdu"
-       "ncurses"
-       "neofetch"
-       "openssh"
-       "openvpn"
-       "pinentry"
-       "pinentry-mac"
-       "python"
-       "pkgconf"
-       #"skhd" tap needed
-       "socat"
-       "sqlite"
-       "telnet"
-       "wget"
-     ];
      casks = [
        "hammerspoon"
-       "firefox"
-       "iina"
-       "the-unarchiver"
-       "imageoptim"
-       "gimp"
-       "disk-inventory-x"
        "blender"
-       "handbrake"
-       "obs"
-       "inkscape"
-       "iterm2"
+       "firefox"
+       "imageoptim"
+       #"obs"
+       #"gimp"
        "openzfs"
-       "unetbootin"
-       "alt-tab"
-       "raycast"
+       #"unetbootin"
      ];
      enable = true;
      masApps = {
-       Keka = 470158793;
+       Keka             = 470158793;
+       GrandPerspective = 1111570163;
      };
      onActivation = {
        autoUpdate = true;
-       cleanup = "zap";
+       #cleanup = "zap";
+       cleanup = "uninstall";
        upgrade = true;
      };
+     #brewPrefix = "/usr/local/bin/";
+     brewPrefix = "/opt/homebrew/bin/";
    };
    nixpkgs = {
      config = {
        allowUnfree = true;
+       allowBroken = true; # Allow packages marked as broken
      };
      hostPlatform = "aarch64-darwin";
    };
+   # Fix app aliases
+   system.activationScripts.applications.text = let
+     env = pkgs.buildEnv {
+       name = "system-applications";
+       paths = config.environment.systemPackages;
+       pathsToLink = "/Applications";
+     };
+   in
+     pkgs.lib.mkForce ''
+       # Set up applications.
+       echo "setting up /Applications..." >&2
+       rm -rf /Applications/Nix\ Apps
+       mkdir -p /Applications/Nix\ Apps
+       find ${env}/Applications -maxdepth 1 -type l -exec readlink '{}' + |
+         while read -r src; do
+           app_name=$(basename "$src")
+           echo "copying $src" >&2
+           ${pkgs.mkalias}/bin/mkalias "$src" "/Applications/Nix Apps/$app_name"
+         done
+     '';
  };
 }

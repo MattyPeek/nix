@@ -1,8 +1,6 @@
 { config, lib, pkgs, ... }: {
-  config = {
-    documentation = {
-      enable = false;
-    };
+  documentation = {
+    enable = false;
   };
   security = {
     pam = {
@@ -40,5 +38,9 @@
         home = "/Users/maty";
       };
     };
+  };
+  programs.bash = {
+    enable = true;
+    completion.enable = true;
   };
 }
