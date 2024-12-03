@@ -16,5 +16,8 @@
         mcbp = import ./config/mcbp.nix flakeContext;
         #mcbp2 = import ./darwinConfigurations/mcbp2.nix flakeContext;
       };
+      nixosConfigurations = {
+        brokolice = import ./config/brokolice.nix flakeContext;
+      };
     };
 }

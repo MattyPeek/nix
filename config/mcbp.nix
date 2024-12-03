@@ -1,8 +1,8 @@
 { inputs, ... }@flakeContext:
 inputs.nix-darwin.lib.darwinSystem {
   modules = [
-    ./packages.nix
-    ./system.nix
+    ./mcbp/packages.nix
+    ./mcbp/system.nix
   ];
   system = "aarch64-darwin";
 }
