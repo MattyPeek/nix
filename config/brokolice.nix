@@ -1,5 +1,5 @@
 { inputs, ... }@flakeContext:
-inputs.nix-darwin.lib.darwinSystem {
+{
   modules = [
     ./brokolice/hardware.nix flakeContext
     #/mnt/etc/nixos/hardware-configuration.nix
