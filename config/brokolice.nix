@@ -1,5 +1,5 @@
 { inputs, ... }@flakeContext:
-{
+inputs.nixpkgs.lib.nixosSystem {
   modules = [
     ./brokolice/hardware.nix flakeContext
     #/mnt/etc/nixos/hardware-configuration.nix
