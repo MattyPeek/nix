@@ -15,16 +15,18 @@
         efiInstallAsRemovable = true;
     };
 
+    # ZFS
     boot.supportedFilesystems = ["zfs"];
     boot.zfs.requestEncryptionCredentials = true;
-
-    network.hostId = "15172c82"; # head -c 8 /etc/machine-id
+    services.zfs.autoScrub.enable = true;
+    networking.hostId = "15172c82"; # head -c 8 /etc/machine-id # for import/export to work
   
     # Users
     users.users = {
         maty = {
             home = "/home/maty";
             isNormalUser = true;
+            initialPassword = "brmbrm";
             description = "Matyas Pesek";
             extraGroups = [ "networkmanager" "wheel" ];
             packages = with pkgs; [
@@ -81,7 +83,10 @@
     networking.nameservers = [ 
         "1.1.1.1" 
         "8.8.8.8"
-    ];
+    ];  
+
+    # Hostname
+    networking.hostname = "brokolice";
 
     # Firewall
     networking.firewall.enable = false;
