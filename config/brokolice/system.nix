@@ -6,10 +6,19 @@
     # Disable documentation to save up some time compiling
     documentation.enable = false;
 
-    # Bootloader
-    boot.loader.grub.enable = true;
-    boot.loader.grub.device = "/dev/sda";
-    boot.loader.grub.useOSProber = true;
+    # GRUB
+    boot.loader.grub = { 
+        enable = true;
+        device = "/dev/sda";
+        useOSProber = true;
+        efiSupport = true;
+        efiInstallAsRemovable = true;
+    };
+
+    boot.supportedFilesystems = ["zfs"];
+    boot.zfs.requestEncryptionCredentials = true;
+
+    network.hostId = "15172c82"; # head -c 8 /etc/machine-id
   
     # Users
     users.users = {
