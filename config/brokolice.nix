@@ -2,7 +2,12 @@
 inputs.nix-darwin.lib.darwinSystem {
   modules = [
     #./brokolice/hardware.nix
-    /etc/nixos/hardware-configuration.nix
+    #/etc/nixos/hardware-configuration.nix
+    
+    (if builtins.pathExists "/mnt/etc/nixos/hardware-configuration.nix"
+    then /mnt/etc/nixos/hardware-configuration.nix
+    else /etc/nixos/hardware-configuration.nix)
+
     ./brokolice/system.nix
     ./brokolice/packages.nix
   ];
