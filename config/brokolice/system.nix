@@ -7,12 +7,14 @@
     documentation.enable = false;
 
     # GRUB
-    boot.loader.grub = { 
+    boot.loader.grub = {
         enable = true;
-        device = "/dev/sda";
-        useOSProber = true;
+        zfsSupport = true;
         efiSupport = true;
         efiInstallAsRemovable = true;
+        mirroredBoots = [
+            { devices = [ "nodev"]; path = "/boot"; }
+        ];
     };
 
     # ZFS
