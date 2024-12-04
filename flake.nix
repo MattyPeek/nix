@@ -5,7 +5,7 @@
         nix-darwin.url = "flake:nix-darwin";
         nix-darwin.inputs.nixpkgs.follows = "nixpkgs";
     };
-    outputs = {self, nixpkgs, ... }@inputs:{
+    outputs = {self, nixpkgs, nix-darwin, ... }@inputs:{
         darwinConfigurations = {
             mcbp = nix-darwin.lib.darwinSystem {
 	            specialArgs = { inherit inputs; };
