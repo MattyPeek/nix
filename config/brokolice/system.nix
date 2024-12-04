@@ -1,8 +1,8 @@
 { config, lib, pkgs, ... }: {
-    
+
     # System version
     system.stateVersion = "24.05";
-    
+
     # Disable documentation to save up some time compiling
     documentation.enable = false;
 
@@ -22,7 +22,7 @@
     boot.zfs.requestEncryptionCredentials = true;
     services.zfs.autoScrub.enable = true;
     networking.hostId = "15172c82"; # head -c 8 /etc/machine-id # for import/export to work
-  
+
     # Users
     users.users = {
         maty = {
@@ -36,14 +36,14 @@
             ];
         };
     };
-    
+
     # SSH
     services.openssh.enable = true;
     users.users.maty.openssh.authorizedKeys.keys = [
         "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAICnzRi2d8ONpPjM1VHWf1WngyG0UqAQ/BX8lXsyVUKct pesek@vshosting.cz"
         "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIDiISby1/6Axhrgyic8lzW32PHD3vZ5oDiwaobMVTDso maty@maty-lb"
     ];
-    
+
     # SUDO
     security.sudo.enable = true;
     security.sudo.extraRules = [{
@@ -54,10 +54,10 @@
             options = [ "NOPASSWD" ];
         }];
     }];
-    
+
     # Bash setup
     programs.bash = {
-        enable = true;
+        #enable = true; # depricated
         completion.enable = true;
     };
     environment.shellInit = ''
@@ -82,13 +82,13 @@
         prefixLength = 24;
     }];
     networking.defaultGateway = "192.168.51.1";
-    networking.nameservers = [ 
-        "1.1.1.1" 
+    networking.nameservers = [
+        "1.1.1.1"
         "8.8.8.8"
-    ];  
+    ];
 
     # Hostname
-    networking.hostname = "brokolice";
+    networking.hostName = "brokolice";
 
     # Firewall
     networking.firewall.enable = false;
@@ -112,5 +112,5 @@
         LC_TELEPHONE = "cs_CZ.UTF-8";
         LC_TIME = "cs_CZ.UTF-8";
     };
-    
+
 }

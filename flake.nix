@@ -1,23 +1,30 @@
 {
-  description = "mcbp flake";
-  inputs = {
-    nixpkgs.url = "flake:nixpkgs/nixpkgs-unstable";
-    nix-darwin.url = "flake:nix-darwin";
-    nix-darwin.inputs.nixpkgs.follows = "nixpkgs";
-  };
-  outputs = inputs:
-    let
-      flakeContext = {
-        inherit inputs;
-      };
-    in
-    {
-      darwinConfigurations = {
-        mcbp = import ./config/mcbp.nix flakeContext;
-        #mcbp2 = import ./darwinConfigurations/mcbp2.nix flakeContext;
-      };
-      nixosConfigurations = {
-        brokolice = import ./config/brokolice.nix flakeContext;
-      };
+    description = "MattyPeek's nix flake";
+    inputs = {
+        nixpkgs.url = "flake:nixpkgs/nixpkgs-unstable";
+        nix-darwin.url = "flake:nix-darwin";
+        nix-darwin.inputs.nixpkgs.follows = "nixpkgs";
+    };
+    outputs = {self, nixpkgs, ... }@inputs:{
+        darwinConfigurations = {
+            mcbp = nix-darwin.lib.darwinSystem {
+	            specialArgs = { inherit inputs; };
+                modules = [
+                    ./config/mcbp/packages.nix
+                    ./config/mcbp/system.nix
+                ];
+            };
+        };
+        nixosConfigurations = {
+            brokolice = nixpkgs.lib.nixosSystem {
+	            specialArgs = { inherit inputs; };
+                modules = [
+	                /etc/nixos/hardware-configuration.nix
+	                ./config/brokolice/packages.nix
+	                ./config/brokolice/system.nix
+	                ./config/brokolice/nginx.nix
+                ];
+            };
+        };
     };
 }
