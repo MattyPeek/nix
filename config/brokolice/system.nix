@@ -50,18 +50,24 @@
             home = "/srv/wikijs";
             uid = 962;
         };
+        status = {
+            group = "status";
+            home = "/srv/status";
+            uid = 963;
+        };
 
     };
     users.groups = {
         transfer =  { gid = 951; };
         postgres =  { gid = 954; };
         wikijs =    { gid = 962; };
+        status =    { gid = 963; };
     };
 
     # Prompt for password change, if not already changed
     system.activationScripts.expirePasswordOnce = ''
         if id "maty" >/dev/null 2>&1; then
-            if [ "$(chage -l example | grep 'Last password change' | cut -d: -f2 | tr -d '[:space:]')" = "never" ]; then
+            if [ "$(chage -l maty | grep 'Last password change' | cut -d: -f2 | tr -d '[:space:]')" = "never" ]; then
                 chage -d 0 maty
             fi
         fi
