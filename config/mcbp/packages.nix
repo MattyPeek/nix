@@ -1,51 +1,59 @@
 { config, lib, pkgs, ... }: {
-  config = {
-   fonts = {
-     packages = [
-       pkgs.nerd-fonts.hack
-     ];
-   };
-   environment.systemPackages = with pkgs; [
-       bash-completion
-       nix-bash-completions
-       neovim
-       pinentry_mac
-       pinentry-curses
-       cmatrix
-       dialog
-       socat
-       ansible
-       asciiquarium
-       bat
-       inetutils
-       socat
-       docker
-       ffmpeg
-       #handbrake # broken
-       jq
-       #mas # installed as HB dependency
-       freerdp
-       mc
-       ncdu
-       ncurses
-       neofetch
-       python3Full
-       pkgconf
-       sqlite
-       wget
-       openssh
-       gnupg
-       openvpn
-       skhd
-       iina
-       #blender # broken
-       gimp
-       inkscape
-       iterm2
-       #disk-inventory-x # x86_64
-       raycast
-       alt-tab-macos
-       #firefox
+    config = {
+        fonts = {
+            packages = [
+                pkgs.nerd-fonts.hack
+            ];
+        };
+        
+        environment.systemPackages = with pkgs; [
+            wimlib
+            zulu17
+            procps
+            bash-completion
+            nix-bash-completions
+            neovim
+            pinentry_mac
+            pinentry-curses
+            vesktop
+            cmatrix
+            dialog
+            socat
+            ansible
+            asciiquarium
+            bat
+            util-linux
+            inetutils
+            socat
+            docker
+            ffmpeg
+            #handbrake # broken
+            jq
+            #mas # installed as HB dependency
+            freerdp
+            mc
+            ncdu
+            pwgen
+            ncurses
+            neofetch
+            wimlib
+            python3Full
+            pkgconf
+            sqlite
+            wget
+            openssh
+            gnupg
+            openvpn
+            skhd
+            iina
+            #blender # broken
+            gimp
+            inkscape
+            iterm2
+            #disk-inventory-x # x86_64
+            raycast
+            alt-tab-macos
+            #firefox
      ];
    homebrew = {
      casks = [
@@ -56,6 +64,8 @@
        #"obs"
        #"gimp"
        "openzfs"
+       "onyx"
+       "handbrake"
        #"unetbootin"
      ];
      enable = true;
