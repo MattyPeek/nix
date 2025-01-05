@@ -13,6 +13,7 @@
             bash-completion
             nix-bash-completions
             neovim
+            htop
             pinentry_mac
             pinentry-curses
             vesktop
