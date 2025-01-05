@@ -29,10 +29,17 @@
       loginwindow = {
         LoginwindowText = "brm brm";
       };
+      NSGlobalDomain = {
+        "com.apple.keyboard.fnState" = true; # Use F1,F2,...
+        "com.apple.mouse.tapBehavior" = 1; # Tap to click
+        NSNavPanelExpandedStateForSaveMode = true; # Extended save dialog
+        AppleShowAllExtensions = true; # File extesions
+      };
       controlcenter.BatteryShowPercentage = true;
       controlcenter.Sound = true;
       controlcenter.Bluetooth = true;
-      hitoolbox.AppleFnUsageType = "Show Emoji & Symbols";
+      #hitoolbox.AppleFnUsageType = "Show Emoji & Symbols";
+      hitoolbox.AppleFnUsageType = "Do Nothing";
     };
     keyboard = {
       remapCapsLockToEscape = true;
