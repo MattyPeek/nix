@@ -17,6 +17,7 @@
             pinentry-curses
             vesktop
             cmatrix
+            baobab
             dialog
             socat
             ansible
