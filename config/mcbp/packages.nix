@@ -64,7 +64,7 @@
        "imageoptim"
        #"obs"
        #"gimp"
-       #"openzfs"
+       "openzfs"
        "onyx"
        "handbrake"
        #"unetbootin"
