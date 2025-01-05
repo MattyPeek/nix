@@ -38,7 +38,9 @@
       remapCapsLockToEscape = true;
       swapLeftCtrlAndFn = false;
       enableKeyMapping = true;
+      nonUS.remapTilde = true;
     };
+    startup.chime = false;
     stateVersion = 5;
   };
   users = {
