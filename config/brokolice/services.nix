@@ -7,7 +7,7 @@
             # ...
         };
         serviceConfig = {
-            ExecStart = "${pkgs.bash} /opt/ticket-checker";
+            ExecStart = "${pkgs.bash}/bin/bash /opt/ticket-checker";
             Restart = "on-failure";
             # ...
         };
