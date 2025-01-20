@@ -7,7 +7,7 @@
             # ...
         };
         serviceConfig = {
-            ExecStart = /usr/bin/env nix-shell -p jq curl --run "/opt/ticket-checker";
+            ExecStart = "/usr/bin/env nix-shell -p jq curl --run '/opt/ticket-checker'";
             Restart = "on-failure";
             # ...
         };
