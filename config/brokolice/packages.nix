@@ -16,8 +16,10 @@
        ansible
        asciiquarium
        bat
+       jdk17
        inetutils
        socat
+       unzip
        docker
        ffmpeg
        jq
