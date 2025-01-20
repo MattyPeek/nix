@@ -6,6 +6,8 @@
      ];
    };
    environment.systemPackages = with pkgs; [
+       nix
+       curl
        bash-completion
        nix-bash-completions
        neovim
