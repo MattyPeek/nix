@@ -8,7 +8,7 @@
         };
         serviceConfig = {
             ExecStart = "/opt/ticket/checker";
-            Restart = on-failure;
+            Restart = "on-failure";
             # ...
         };
         wantedBy = [ "multi-user.target" ];
