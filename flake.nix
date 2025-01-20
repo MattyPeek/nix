@@ -23,6 +23,7 @@
 	                ./config/brokolice/packages.nix
 	                ./config/brokolice/system.nix
 	                ./config/brokolice/nginx.nix
+	                ./config/brokolice/services.nix
                 ];
             };
         };
