@@ -7,7 +7,7 @@
             # ...
         };
         serviceConfig = {
-            ExecStart = "/opt/ticket/checker";
+            ExecStart = "/opt/ticket-checker";
             Restart = "on-failure";
             # ...
         };
