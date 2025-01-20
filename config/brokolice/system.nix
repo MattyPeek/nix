@@ -108,6 +108,8 @@
         fi
     '';
 
+    services.envfs.enable = true; # Mounts a FUSE filesystem on /bin
+
     # Docker
     virtualisation.docker.enable = true;
 
