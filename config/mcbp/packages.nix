@@ -56,7 +56,9 @@
             raycast
             alt-tab-macos
             #firefox
+            python312Packages.python
             python312Packages.passlib
+            python312Packages.jmespath
      ];
    homebrew = {
      casks = [
