@@ -56,6 +56,7 @@
             raycast
             alt-tab-macos
             #firefox
+            pipx
             python312Packages.python
             python312Packages.passlib
             python312Packages.jmespath
