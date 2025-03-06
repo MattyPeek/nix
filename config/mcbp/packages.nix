@@ -16,6 +16,7 @@
             htop
             pinentry_mac
             pinentry-curses
+            gtop
             vesktop
             cmatrix
             baobab
