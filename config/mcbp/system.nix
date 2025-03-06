@@ -8,7 +8,7 @@
     };
   };
   services = {
-    nix-daemon = {
+    nix-darwin = {
       enable = true;
     };
     sketchybar = {
