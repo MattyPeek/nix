@@ -18,6 +18,7 @@
             pinentry-curses
             gtop
             vesktop
+            iproute2mac
             cmatrix
             baobab
             dialog
