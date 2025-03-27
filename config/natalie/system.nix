@@ -16,7 +16,7 @@
         #efiInstallAsRemovable = true;
         device = "nodev";
         #canTouchEfiVariables = true;
-        efiSysMountPoint = "/boot";
+        #efiSysMountPoint = "/boot";
     };
     
     # ZFS
