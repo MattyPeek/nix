@@ -4,8 +4,9 @@
         nixpkgs.url = "flake:nixpkgs/nixpkgs-unstable";
         nix-darwin.url = "flake:nix-darwin";
         nix-darwin.inputs.nixpkgs.follows = "nixpkgs";
+        disko.url = "github:nix-community/disko";
     };
-    outputs = {self, nixpkgs, nix-darwin, ... }@inputs:{
+    outputs = {self, nixpkgs, nix-darwin, disko, ... }@inputs:{
         darwinConfigurations = {
             mcbp = nix-darwin.lib.darwinSystem {
 	            specialArgs = { inherit inputs; };
@@ -24,6 +25,17 @@
 	                ./config/brokolice/system.nix
 	                ./config/brokolice/nginx.nix
 	                ./config/brokolice/services.nix
+                ];
+            };
+            natalie = nixpkgs.lib.nixosSystem {
+	            specialArgs = { inherit inputs; };
+                modules = [
+	                ./config/natalie/packages.nix
+	                ./config/natalie/system.nix
+	                ./config/natalie/services.nix
+	                ./config/natalie/disks.nix
+	                ./config/natalie/firewall.nix
+	                ./config/natalie/wireguard.nix
                 ];
             };
         };
