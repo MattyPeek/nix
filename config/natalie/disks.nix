@@ -1,5 +1,7 @@
 { pkgs, config, lib, nixpkgs, disko, modulesPath, inputs, ... }: {
-
+  imports = [
+    inputs.disko.nixosModules.disko	
+  ];
     disko.devices = {
         disk = {
             main = {
