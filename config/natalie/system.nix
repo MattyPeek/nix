@@ -119,7 +119,7 @@
 
 
     # Firewall
-    networking.firewall.enable = false;
+    #networking.firewall.enable = false;
     #networking.firewall.allowedTCPPorts = [ ... ];
     #networking.firewall.allowedUDPPorts = [ ... ];
 
