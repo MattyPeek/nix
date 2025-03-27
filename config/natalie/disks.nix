@@ -1,4 +1,4 @@
-{ pkgs, config, lib, nixpkgs, disko, modulesPath, ... }: {
+{ pkgs, config, lib, nixpkgs, disko, modulesPath, inputs, ... }: {
 
     disko.devices = {
         disk = {

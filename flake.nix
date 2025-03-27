@@ -31,7 +31,7 @@
             natalie = nixpkgs.lib.nixosSystem {
 	            specialArgs = { inherit inputs; };
                 modules = [
-                    inputs.disko.nixosModules.disko
+                    disko.nixosModules.disko
 	                ./config/natalie/packages.nix
 	                ./config/natalie/system.nix
 	                ./config/natalie/disks.nix
