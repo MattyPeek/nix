@@ -29,7 +29,7 @@
                 ];
             };
             natalie = nixpkgs.lib.nixosSystem {
-	            specialArgs.inputs = inputs;
+	            specialArgs = { inherit inputs; };
                 modules = [
                     disko.nixosModules.disko
 	                ./config/natalie/packages.nix
