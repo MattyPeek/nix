@@ -34,7 +34,7 @@
             mirror = {
                 type = "disk";
                 device = "/dev/sdb";
-                content = diskoConfig.disk.main.content;
+                content = disko.devices.disk.main.content;
             };
         };
         zpool = {
