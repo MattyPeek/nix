@@ -32,7 +32,6 @@
                 modules = [
 	                ./config/natalie/packages.nix
 	                ./config/natalie/system.nix
-	                ./config/natalie/services.nix
 	                ./config/natalie/disks.nix
 	                ./config/natalie/firewall.nix
 	                ./config/natalie/wireguard.nix
