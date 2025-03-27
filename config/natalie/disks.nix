@@ -1,4 +1,4 @@
-{ pkgs, lib, disko, ... }: {
+{ pkgs, lib, nixpkgs, disko, ... }: {
 
     disko.devices = {
         disk = {
