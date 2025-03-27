@@ -117,17 +117,6 @@
     # Docker
     virtualisation.docker.enable = true;
 
-    # Network
-    networking.networkmanager.enable = true;
-    networking.interfaces.eth0.ipv4.addresses = [ {
-        address = "192.168.51.10";
-        prefixLength = 24;
-    }];
-    networking.defaultGateway = "192.168.51.1";
-    networking.nameservers = [
-        "1.1.1.1"
-        "8.8.8.8"
-    ];
 
     # Firewall
     networking.firewall.enable = false;
