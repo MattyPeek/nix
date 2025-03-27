@@ -14,7 +14,7 @@
                             content = {
                                 type = "filesystem";
                                 format = "vfat";
-                                mountpoint = "/boot/efi";
+                                mountpoint = "/boot";
                                 mountOptions = [ "umask=0077" ];
                             };
                         };
@@ -70,23 +70,23 @@
                 datasets = {
                     "system/root" = {
                         type = "zfs_fs";
-                        mountpoint = "/";
+                        options.mountpoint = "/";
                     };
                     "system/root/home" = {
                         type = "zfs_fs";
-                        mountpoint = "/home";
+                        options.mountpoint = "/home";
                     };
                     "system/root/var" = {
                         type = "zfs_fs";
-                        mountpoint = "/var";
+                        options.mountpoint = "/var";
                     };
                     "system/root/srv" = {
                         type = "zfs_fs";
-                        mountpoint = "/srv";
+                        options.mountpoint = "/srv";
                     };
                     "nobackup/tmp" = {
                         type = "zfs_fs";
-                        mountpoint = "/tmp";
+                        options.mountpoint = "/tmp";
                     };
                 };
             };
