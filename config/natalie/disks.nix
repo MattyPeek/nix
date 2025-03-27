@@ -2,58 +2,53 @@
 
     disko.devices = {
         disk = {
-            main = {
+            disk1 = {
                 type = "disk";
                 device = "/dev/sda";
                 content = {
                     type = "gpt";
                     partitions = {
-                        boot = {
-                            size = "1M";
-                            type = "EF02"; # BIOS boot partition
-                        };
-                        esp = {
+                        ESP = {
                             size = "512M";
                             type = "EF00"; # EFI system partition
                             content = {
                                 type = "filesystem";
                                 format = "vfat";
-                                mountpoint = "/boot";
+                                mountpoint = "/boot/efi";
+                                mountOptions = [ "umask=0077" ];
                             };
                         };
                         zfs = {
                             size = "100%";
                             content = {
                                 type = "zfs";
-                                pool = "rpool";
+                                pool = "pool1";
                             };
                         };
                     };
                 };
             };
-            mirror = {
+            disk2 = {
                 type = "disk";
                 device = "/dev/sdb";
                 content = {
                     type = "gpt";
                     partitions = {
-                        boot = {
-                            size = "1M";
-                            type = "EF02"; # BIOS boot partition
-                        };
-                        esp = {
+                        ESP = {
                             size = "512M";
                             type = "EF00"; # EFI system partition
                             content = {
                                 type = "filesystem";
                                 format = "vfat";
+                                #mountpoint = "/boot/efi";
+                                mountOptions = [ "umask=0077" ];
                             };
                         };
                         zfs = {
                             size = "100%";
                             content = {
                                 type = "zfs";
-                                pool = "rpool";
+                                pool = "pool1";
                             };
                         };
                     };
@@ -64,10 +59,14 @@
             pool1 = {
                 type = "zpool";
                 mode = "mirror";
+                options.cachefile = "none";
                 rootFsOptions = {
                     "compression" = "lz4";
                     "atime" = "off";
                 };
+                mountpoint = "/";
+                postCreateHook = "zfs list -t snapshot -H -o name | grep -E '^pool1@blank$' || zfs snapshot pool1@blank";
+                
                 datasets = {
                     "system/root" = {
                         type = "zfs_fs";
