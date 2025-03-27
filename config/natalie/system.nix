@@ -14,9 +14,9 @@
         zfsSupport = true;
         efiSupport = true;
         efiInstallAsRemovable = true;
-        mirroredBoots = [
-            { devices = [ "nodev"]; path = "/boot"; }
-        ];
+        #mirroredBoots = [
+        #    { devices = [ "nodev"]; path = "/boot"; }
+        #];
     };
     
     # ZFS
