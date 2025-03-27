@@ -4,7 +4,7 @@
         disk = {
             main = {
                 type = "disk";
-                device = "/dev/disk/by-id/${builtins.head (lib.filterAttrs (name: val: val.type == "disk") (import <nixos/modules/installer/tools.nix>).availableDisks)}";
+                device = "/dev/sda";
                 content = {
                     type = "gpt";
                     partitions = {
@@ -33,7 +33,7 @@
             };
             mirror = {
                 type = "disk";
-                device = "/dev/disk/by-id/${builtins.head (lib.filterAttrs (name: val: val.type == "disk") (import <nixos/modules/installer/tools.nix>).availableDisks) ? 1}";
+                device = "/dev/sdb";
                 content = diskoConfig.disk.main.content;
             };
         };
