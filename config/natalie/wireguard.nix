@@ -22,7 +22,7 @@
         };
     };
 
-    systemd.services.wg-quick@server = {
+    systemd.services."wg-quick@server" = {
         description = "WireGuard VPN Interface";
         wantedBy = [ "multi-user.target" ];
         serviceConfig.ExecStart = "${pkgs.wireguardTools}/bin/wg-quick up wg0";
