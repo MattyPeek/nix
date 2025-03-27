@@ -1,4 +1,5 @@
-{ pkgs, config, lib, nixpkgs, disko, modulesPath, inputs, ... }: {
+{ pkgs, config, lib, nixpkgs, modulesPath, inputs, disko, ... }: {
+
   imports = [
     inputs.disko.nixosModules.disko	
   ];
