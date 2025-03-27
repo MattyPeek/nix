@@ -4,7 +4,7 @@
         nixpkgs.url = "flake:nixpkgs/nixpkgs-unstable";
         nix-darwin.url = "flake:nix-darwin";
         nix-darwin.inputs.nixpkgs.follows = "nixpkgs";
-        disko.url = "github:nix-community/disko/latest";
+        disko.url = "github:nix-community/disko";
         disko.inputs.nixpkgs.follows = "nixpkgs";
     };
     outputs = {self, nixpkgs, nix-darwin, disko, ... }@inputs:{
@@ -31,7 +31,7 @@
             natalie = nixpkgs.lib.nixosSystem {
 	            specialArgs = { inherit inputs; };
                 modules = [
-                    #disko.nixosModules.disko
+                    inputs.disko.nixosModules.disko
 	                ./config/natalie/packages.nix
 	                ./config/natalie/system.nix
 	                ./config/natalie/disks.nix
