@@ -1,7 +1,7 @@
 {
     description = "MattyPeek's nix flake";
     inputs = {
-        nixpkgs.url = "flake:nixpkgs/nixpkgs-25.11";
+        nixpkgs.url = "github:NixOS/nixpkgs/nixos-25.11";
         nix-darwin.url = "flake:nix-darwin";
         nix-darwin.inputs.nixpkgs.follows = "nixpkgs";
         disko.url = "github:nix-community/disko";
