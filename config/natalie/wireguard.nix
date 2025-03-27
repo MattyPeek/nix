@@ -25,8 +25,8 @@
     systemd.services."wg-quick@server" = {
         description = "WireGuard VPN Interface";
         wantedBy = [ "multi-user.target" ];
-        serviceConfig.ExecStart = "${pkgs.wireguardTools}/bin/wg-quick up wg0";
-        serviceConfig.ExecStop = "${pkgs.wireguardTools}/bin/wg-quick down wg0";
+        serviceConfig.ExecStart = "${pkgs.wireguard-tools}/bin/wg-quick up wg0";
+        serviceConfig.ExecStop = "${pkgs.wireguard-tools}/bin/wg-quick down wg0";
     };
 
     networking.firewall.allowedTCPPorts = [ 12312 ];
