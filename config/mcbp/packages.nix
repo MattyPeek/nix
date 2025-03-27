@@ -14,6 +14,7 @@
             nix-bash-completions
             neovim
             htop
+            iperf
             pinentry_mac
             pinentry-curses
             gtop
