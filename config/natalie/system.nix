@@ -15,7 +15,7 @@
         efiSupport = true;
         #efiInstallAsRemovable = true;
         device = "nodev";
-        canTouchEfiVariables = true;
+        #canTouchEfiVariables = true;
         efiSysMountPoint = "/boot";
     };
     
