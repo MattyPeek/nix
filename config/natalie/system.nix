@@ -3,7 +3,7 @@
     networking.hostName = "natalie";
 
     # System version
-    system.stateVersion = "24.05";
+    system.stateVersion = "24.11";
 
     # Disable documentation to save up some time compiling
     documentation.enable = false;
@@ -23,7 +23,7 @@
     boot.supportedFilesystems = ["zfs"];
     boot.zfs.requestEncryptionCredentials = true;
     services.zfs.autoScrub.enable = true;
-    networking.hostId = "XXXXXXXX"; # head -c 8 /etc/machine-id # for import/export to work
+    networking.hostId = "261462fe"; # head -c 8 /etc/machine-id # for import/export to work
 
 
     # Users
