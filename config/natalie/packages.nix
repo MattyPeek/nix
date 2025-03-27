@@ -1,11 +1,11 @@
 { config, lib, pkgs, ... }: {
   
     config = {
-        fonts = {
-            packages = [
-                pkgs.nerd-fonts-hack
-            ];
-        };
+        #fonts = {
+        #    packages = [
+        #        pkgs.nerd-fonts.hack
+        #    ];
+        #};
         environment.systemPackages = with pkgs; [
             nix
             curl
