@@ -16,7 +16,7 @@
             cmatrix
             dialog
             socat
-            wireguard-tools
+            wireguardTools
             ansible
             asciiquarium
             bat
