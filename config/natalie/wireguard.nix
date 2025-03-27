@@ -6,7 +6,7 @@
         server = {
             privateKeyFile = "/etc/wireguard/server.pk";
             listenPort = 12312;
-            addresses = [
+            ips = [
                 "10.0.1.1/24"
             ];
             peers = [
