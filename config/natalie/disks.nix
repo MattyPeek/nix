@@ -34,7 +34,31 @@
             mirror = {
                 type = "disk";
                 device = "/dev/sdb";
-                content = main.content;
+                content = {
+                    type = "gpt";
+                    partitions = {
+                        boot = {
+                            size = "1M";
+                            type = "EF02"; # BIOS boot partition
+                        };
+                        esp = {
+                            size = "512M";
+                            type = "EF00"; # EFI system partition
+                            content = {
+                                type = "filesystem";
+                                format = "vfat";
+                                mountpoint = "/boot";
+                            };
+                        };
+                        zfs = {
+                            size = "100%";
+                            content = {
+                                type = "zfs";
+                                pool = "rpool";
+                            };
+                        };
+                    };
+                };
             };
         };
         zpool = {
