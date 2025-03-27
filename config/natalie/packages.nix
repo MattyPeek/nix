@@ -3,7 +3,7 @@
     config = {
         fonts = {
             packages = [
-                pkgs.nerd-fonts.hack
+                pkgs.nerd-fonts-hack
             ];
         };
         environment.systemPackages = with pkgs; [
