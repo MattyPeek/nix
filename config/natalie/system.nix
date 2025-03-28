@@ -16,8 +16,10 @@
         efiInstallAsRemovable = true;
         copyKernels = true;
         #fsIdentifier = "label";
-
-        devices = [ "nodev" ];
+        mirroredBoots = [{ 
+            devices = [ "nodev"]; 
+            path = "/boot"; 
+        }];
     };
     
     # ZFS
