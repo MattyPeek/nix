@@ -31,7 +31,7 @@
                         };
                     };
                 };
-            };
+            });
         };
         disko.devices.mdadm = {
             efiraid = {
