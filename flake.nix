@@ -1,3 +1,6 @@
+# NIX_CONFIG="experimental-features = nix-command flakes" ; sudo -E nixos-install --flake ./#natalie --no-write-lock-file
+# NIX_CONFIG="experimental-features = nix-command flakes" ; sudo -E nixos-install --flake github:mattypeek/nix#natalie --no-write-lock-file
+
 {
     description = "MattyPeek's nix flake";
     inputs = {
@@ -32,9 +35,9 @@
 	            specialArgs = { inherit inputs disko; };
                 modules = [
                     inputs.disko.nixosModules.disko
-	                ./config/natalie/packages.nix
-	                ./config/natalie/system.nix
 	                ./config/natalie/disks.nix
+	                ./config/natalie/system.nix
+	                ./config/natalie/packages.nix
 	                ./config/natalie/firewall.nix
 	                ./config/natalie/wireguard.nix
                 ];

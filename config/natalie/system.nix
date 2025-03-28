@@ -13,10 +13,11 @@
         enable = true;
         zfsSupport = true;
         efiSupport = true;
-        #efiInstallAsRemovable = true;
-        device = "nodev";
-        #canTouchEfiVariables = true;
-        #efiSysMountPoint = "/boot";
+        efiInstallAsRemovable = true;
+        copyKernels = true;
+        fsIdentifier = "label";
+
+        devices = [ "nodev" ];
     };
     
     # ZFS

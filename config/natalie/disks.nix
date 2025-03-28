@@ -1,8 +1,10 @@
-{ pkgs, config, lib, nixpkgs, modulesPath, inputs, disko, ... }: {
+# sudo nix --experimental-features "nix-command flakes" run github:nix-community/disko -- --mode disko --flake ./#natalie
+
+{ ... }: {
 
     disko.devices = {
         disk = {
-            disk1 = {
+            sda = {
                 type = "disk";
                 device = "/dev/sda";
                 content = {
@@ -28,7 +30,7 @@
                     };
                 };
             };
-            disk2 = {
+            sdb = {
                 type = "disk";
                 device = "/dev/sdb";
                 content = {
