@@ -1,3 +1,4 @@
+# sudo nix --experimental-features "nix-command flakes" run github:nix-community/disko -- --mode disko --flake github:mattypeek/nix#natalie
 # sudo nix --experimental-features "nix-command flakes" run github:nix-community/disko -- --mode disko --flake ./#natalie
 
 { ... }: {
