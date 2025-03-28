@@ -30,6 +30,11 @@
     #networking.hostId = "261462fe"; # head -c 8 /etc/machine-id # for import/export to work
     networking.hostId = "abfbceac"; # pmcllab
     #boot.zfs.devNodes = "/dev/disk/by-path"; # Try this
+    
+    boot.initrd.availableKernelModules = [ "ata_piix" "uhci_hcd" "virtio_pci" "virtio_scsi" "sd_mod" "sr_mod" ];
+    boot.initrd.kernelModules = [ ];
+    boot.kernelModules = [ "kvm-intel" ];
+    boot.extraModulePackages = [ ];
 
 
     # Users
