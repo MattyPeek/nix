@@ -29,6 +29,7 @@
     services.zfs.autoScrub.enable = true;
     #networking.hostId = "261462fe"; # head -c 8 /etc/machine-id # for import/export to work
     networking.hostId = "abfbceac"; # pmcllab
+    #boot.zfs.devNodes = "/dev/disk/by-path"; # Try this
 
 
     # Users
