@@ -60,7 +60,7 @@
                     "utf8only" = "off";
                     "normalization" = "formD";
                     "xattr" = "sa";
-                    "ashift" = "12";
+                    #"ashift" = "12";
                 };
                 postCreateHook = "zfs list -t snapshot -H -o name | grep -E '^pool1@blank$' || zfs snapshot pool1@blank";
                 
