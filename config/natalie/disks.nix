@@ -54,8 +54,15 @@
                 rootFsOptions = {
                     "compression" = "lz4";
                     "atime" = "off";
+                    "mountpoint" = "none";
+                    "acltype" = "posixacl";
+                    "atime" = "off";
+                    "canmount" = "off";
+                    "utf8only" = "off";
+                    "normalization" = "formD";
+                    "xattr" = "sa";
+                    "ashift" = "12";
                 };
-                #mountpoint = "/";
                 postCreateHook = "zfs list -t snapshot -H -o name | grep -E '^pool1@blank$' || zfs snapshot pool1@blank";
                 
                 datasets = {
