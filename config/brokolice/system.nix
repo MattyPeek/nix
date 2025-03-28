@@ -21,8 +21,8 @@
     boot.supportedFilesystems = ["zfs"];
     boot.zfs.requestEncryptionCredentials = true;
     services.zfs.autoScrub.enable = true;
-    #networking.hostId = "15172c82"; # head -c 8 /etc/machine-id # for import/export to work
-    networking.hostId = "abfbceac"; # pmcllab
+    networking.hostId = "15172c82"; # head -c 8 /etc/machine-id # for import/export to work
+    #networking.hostId = "abfbceac"; # pmcllab
 
     # Users
     users.users = {
