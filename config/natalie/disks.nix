@@ -58,9 +58,8 @@
                     "acltype" = "posixacl";
                     "canmount" = "off";
                     "utf8only" = "off";
-                    "normalization" = "formD";
+                    "normalization" = "none";
                     "xattr" = "sa";
-                    #"ashift" = "12";
                 };
                 postCreateHook = "zfs list -t snapshot -H -o name | grep -E '^pool1@blank$' || zfs snapshot pool1@blank";
                 
