@@ -36,7 +36,7 @@
         efiraid = {
             type = "mdadm";
             level = 1;
-            metadata = "0.1";
+            metadata = "1.0";
             content = {
                 type = "filesystem";
                 format = "vfat";
