@@ -46,7 +46,7 @@
         };
     };
 
-        zpool = {
+    disko.devices.zpool = {
             pool1 = {
                 type = "zpool";
                 mode = "mirror";
