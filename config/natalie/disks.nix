@@ -1,13 +1,12 @@
 # sudo nix --experimental-features "nix-command flakes" run github:nix-community/disko -- --mode disko --flake github:mattypeek/nix#natalie
 # sudo nix --experimental-features "nix-command flakes" run github:nix-community/disko -- --mode disko --flake ./#natalie
 
-{ ... }: {
+{ lib, ... }: {
 
     disko.devices = {
-        disk = {
-            sda = {
+        disk = lib.genAttrs [ "sda" "sdb" ] (name: {
                 type = "disk";
-                device = "/dev/sda";
+                device = "/dev/${name}";
                 content = {
                     type = "gpt";
                     partitions = {
@@ -15,10 +14,12 @@
                             size = "512M";
                             type = "EF00"; # EFI system partition
                             content = {
-                                type = "filesystem";
-                                format = "vfat";
-                                mountpoint = "/boot";
-                                mountOptions = [ "umask=0077" ];
+                                #type = "filesystem";
+                                #format = "vfat";
+                                #mountpoint = "/boot";
+                                #mountOptions = [ "umask=0077" ];
+                                type = "mdraid";
+                                name = "efiraid";
                             };
                         };
                         zfs = {
@@ -31,30 +32,17 @@
                     };
                 };
             };
-            sdb = {
-                type = "disk";
-                device = "/dev/sdb";
+        };
+        disko.devices.mdadm = {
+            efiraid = {
+                type = "mdadm";
+                level = 1;
+                metadata = "1.0";
                 content = {
-                    type = "gpt";
-                    partitions = {
-                        ESP = {
-                            size = "512M";
-                            type = "EF00"; # EFI system partition
-                            content = {
-                                type = "filesystem";
-                                format = "vfat";
-                                #mountpoint = "/boot/efi";
-                                mountOptions = [ "umask=0077" ];
-                            };
-                        };
-                        zfs = {
-                            size = "100%";
-                            content = {
-                                type = "zfs";
-                                pool = "pool1";
-                            };
-                        };
-                    };
+                    type = "filesystem";
+                    format = "vfat";
+                    mountpoint = "/boot";
+                    mountOptions = [ "umask=0077" ];
                 };
             };
         };
