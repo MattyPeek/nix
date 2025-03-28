@@ -3,49 +3,49 @@
 
 { lib, ... }: {
 
-    disko.devices = {
-        disk = lib.genAttrs [ "sda" "sdb" ] (name: {
-                type = "disk";
-                device = "/dev/${name}";
-                content = {
-                    type = "gpt";
-                    partitions = {
-                        ESP = {
-                            size = "512M";
-                            type = "EF00"; # EFI system partition
-                            content = {
-                                #type = "filesystem";
-                                #format = "vfat";
-                                #mountpoint = "/boot";
-                                #mountOptions = [ "umask=0077" ];
-                                type = "mdraid";
-                                name = "efiraid";
-                            };
-                        };
-                        zfs = {
-                            size = "100%";
-                            content = {
-                                type = "zfs";
-                                pool = "pool1";
-                            };
-                        };
+    disko.devices.disk = lib.genAttrs [ "sda" "sdb" ] (name: {
+        type = "disk";
+        device = "/dev/${name}";
+        content = {
+            type = "gpt";
+            partitions = {
+                ESP = {
+                    size = "512M";
+                    type = "EF00"; # EFI system partition
+                    content = {
+                        #type = "filesystem";
+                        #format = "vfat";
+                        #mountpoint = "/boot";
+                        #mountOptions = [ "umask=0077" ];
+                        type = "mdraid";
+                        name = "efiraid";
                     };
                 };
-            });
-        };
-        disko.devices.mdadm = {
-            efiraid = {
-                type = "mdadm";
-                level = 1;
-                metadata = "1.0";
-                content = {
-                    type = "filesystem";
-                    format = "vfat";
-                    mountpoint = "/boot";
-                    mountOptions = [ "umask=0077" ];
+                zfs = {
+                    size = "100%";
+                    content = {
+                        type = "zfs";
+                        pool = "pool1";
+                    };
                 };
             };
         };
+    });
+    
+    disko.devices.mdadm = {
+        efiraid = {
+            type = "mdadm";
+            level = 1;
+            metadata = "0.1";
+            content = {
+                type = "filesystem";
+                format = "vfat";
+                mountpoint = "/boot";
+                mountOptions = [ "umask=0077" ];
+            };
+        };
+    };
+
         zpool = {
             pool1 = {
                 type = "zpool";
