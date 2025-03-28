@@ -55,10 +55,18 @@
                     "compression" = "lz4";
                     "atime" = "off";
                 };
-                mountpoint = "/";
+                #mountpoint = "/";
                 postCreateHook = "zfs list -t snapshot -H -o name | grep -E '^pool1@blank$' || zfs snapshot pool1@blank";
                 
                 datasets = {
+                    "system" = {
+                        type = "zfs_fs";
+                        options.mountpoint = "none";
+                    };
+                    "nobackup" = {
+                        type = "zfs_fs";
+                        options.mountpoint = "none";
+                    };
                     "system/root" = {
                         type = "zfs_fs";
                         options.mountpoint = "/";

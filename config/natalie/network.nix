@@ -4,10 +4,13 @@
     networking.interfaces.enp4s0 = {
         ipv4 = {
             addresses = [ {
-                address = "192.168.51.10";
+                #address = "78.24.8.73";
+                address = "192.168.51.11";
+                #prefixLength = 28;
                 prefixLength = 24;
             }];
-            gateway = "78.24.8.65";
+            #gateway = "78.24.8.65";
+            gateway = "192.168.51.1";
             dns = [
                 "1.1.1.1"
                 "8.8.8.8"
