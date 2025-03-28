@@ -56,7 +56,6 @@
                     "atime" = "off";
                     "mountpoint" = "none";
                     "acltype" = "posixacl";
-                    "atime" = "off";
                     "canmount" = "off";
                     "utf8only" = "off";
                     "normalization" = "formD";
