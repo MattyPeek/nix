@@ -15,7 +15,7 @@
         efiSupport = true;
         efiInstallAsRemovable = true;
         copyKernels = true;
-        fsIdentifier = "label";
+        #fsIdentifier = "label";
 
         devices = [ "nodev" ];
     };
