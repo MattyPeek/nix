@@ -38,6 +38,7 @@
 	                ./config/natalie/disks.nix
 	                ./config/natalie/system.nix
 	                ./config/natalie/packages.nix
+	                ./config/natalie/network.nix
 	                ./config/natalie/firewall.nix
 	                ./config/natalie/wireguard.nix
 	                ./config/natalie/desktop.nix
