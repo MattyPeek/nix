@@ -27,7 +27,7 @@
     services.zfs.autoScrub.enable = true;
     networking.hostId = "86658b80"; # head -c 8 /etc/machine-id # for import/export to work
     
-    boot.initrd.availableKernelModules = [ "ata_piix" "uhci_hcd" "virtio_pci" "virtio_scsi" "sd_mod" "sr_mod" ];
+    boot.initrd.availableKernelModules = [ "ata_piix" "uhci_hcd" "sd_mod" "sr_mod" ];
     boot.initrd.kernelModules = [ ];
     boot.kernelModules = [ "kvm-intel" ];
     boot.extraModulePackages = [ ];
