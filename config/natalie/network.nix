@@ -8,10 +8,8 @@
     networking.interfaces.ens18 = {
         ipv4 = {
             addresses = [ {
-                #address = "78.24.8.73";
-                address = "192.168.51.11";
-                #prefixLength = 28;
-                prefixLength = 24;
+                address = "78.24.8.73";
+                prefixLength = 28;
             }];
             #gateway = "78.24.8.65";
         };
@@ -28,7 +26,7 @@
         "2001:4860:4860::1111" 
         "2606:4700:4700::8888" 
     ];
-    networking.defaultGateway = { address = "192.168.51.1"; }; #78.24.8.65
+    networking.defaultGateway = { address = "78.24.8.65"; };
     networking.defaultGateway6 = { address = "2a00:1ed0:3c::1"; };
 
     networking.interfaces.enp3s0f0 = {

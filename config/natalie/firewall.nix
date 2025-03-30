@@ -3,7 +3,7 @@
     networking.nat = {
         enable = true;
         internalInterfaces = [ "tun0" "server" "enp3s0f0" ]; # Adjust to your interfaces
-        externalInterface = "ens18"; # Adjust to your WAN interface
+        externalInterface = "enp4s0"; # Adjust to your WAN interface
     };
 
     networking.firewall = {
