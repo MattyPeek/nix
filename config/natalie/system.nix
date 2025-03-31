@@ -59,6 +59,9 @@
 
     boot.loader.timeout = 0; # Skip grub, click any key during boot to show
 
+    # SmartCard support
+    services.pcscd.enable = true;
+
     # Users
     users.users = {
         maty = {
