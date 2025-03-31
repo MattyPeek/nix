@@ -25,6 +25,7 @@
             dialog
             socat
             ansible
+            jmeter
             asciiquarium
             bat
             util-linux
