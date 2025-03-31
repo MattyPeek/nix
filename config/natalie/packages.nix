@@ -51,6 +51,7 @@
             bind
             traceroute
             firefox
+            yubikey-manager-qt
         ];
         nixpkgs = {
             config = {
