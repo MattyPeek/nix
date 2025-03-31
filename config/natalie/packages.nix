@@ -8,10 +8,13 @@
         #};
         environment.systemPackages = with pkgs; [
             nix
-            cope
+            #cope
+            #(cope.overrideAttrs (oldAttrs: { postInstall = oldAttrs.postInstall or "" + '' rm -f $out/bin/ip ''; }))
+            iproute2
+            pciutils
+            usbutils
             curl
             bash-completion
-            iproute2
             nix-bash-completions
             neovim
             pinentry-curses
