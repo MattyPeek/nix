@@ -13,6 +13,7 @@
             iproute2
             pciutils
             usbutils
+            killall
             curl
             bash-completion
             nix-bash-completions
