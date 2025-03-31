@@ -8,6 +8,7 @@
         #};
         environment.systemPackages = with pkgs; [
             nix
+            cope
             curl
             bash-completion
             nix-bash-completions
@@ -45,6 +46,7 @@
             ipfetch
             bind
             traceroute
+            firefox
         ];
         nixpkgs = {
             config = {

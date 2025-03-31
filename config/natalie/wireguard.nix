@@ -1,10 +1,9 @@
 { config, pkgs, lib, ... }: {
 
-    #networking.wireguard.enable = true;
-
+    networking.wireguard.enable = true;
+    
     networking.wireguard.interfaces = {
         server = {
-            privateKeyFile = "/etc/wireguard/server.pk";
             listenPort = 12312;
             ips = [
                 "10.0.1.1/24"
@@ -19,17 +18,17 @@
                     allowedIPs = [ "10.0.1.3/32" ];
                 }
             ];
+            postSetup = ''
+                ${pkgs.iptables}/bin/iptables -t nat -A POSTROUTING -s 10.100.0.0/24 -o eth0 -j MASQUERADE
+            '';
+            postShutdown = ''
+                ${pkgs.iptables}/bin/iptables -t nat -D POSTROUTING -s 10.100.0.0/24 -o eth0 -j MASQUERADE
+            '';
+            privateKeyFile = "/srv/wireguard/server.pk";
         };
     };
 
-    systemd.services."wg-quick@server" = {
-        description = "WireGuard VPN Interface";
-        wantedBy = [ "multi-user.target" ];
-        serviceConfig.ExecStart = "${pkgs.wireguard-tools}/bin/wg-quick up server";
-        serviceConfig.ExecStop = "${pkgs.wireguard-tools}/bin/wg-quick down server";
-    };
-
-    networking.firewall.allowedTCPPorts = [ 12312 ];
-    networking.firewall.allowedUDPPorts = [ 12312 ];
+    #networking.firewall.allowedTCPPorts = [ 12312 ];
+    #networking.firewall.allowedUDPPorts = [ 12312 ];
 }
 

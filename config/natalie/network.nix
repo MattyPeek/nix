@@ -4,8 +4,7 @@
 
     networking.useDHCP = false;
 
-    #networking.interfaces.enp4s0 = {
-    networking.interfaces.ens18 = {
+    networking.interfaces.enp4s0 = {
         ipv4 = {
             addresses = [ {
                 address = "78.24.8.73";
@@ -20,7 +19,8 @@
             }];
         };
     };
-    networking.nameservers = [
+    networking.networkmanager.insertNameservers = [
+    #networking.nameservers = [
         "1.1.1.1"
         "8.8.8.8"
         "2001:4860:4860::1111" 

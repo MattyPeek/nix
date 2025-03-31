@@ -27,11 +27,37 @@
     services.zfs.autoScrub.enable = true;
     networking.hostId = "86658b80"; # head -c 8 /etc/machine-id # for import/export to work
     
-    boot.initrd.availableKernelModules = [ "ata_piix" "uhci_hcd" "sd_mod" "sr_mod" ];
+    # Kernel modules
+    boot.initrd.availableKernelModules = [ "ata_piix" "uhci_hcd" "sd_mod" "sr_mod" "amdgpu" ];
     boot.initrd.kernelModules = [ ];
-    boot.kernelModules = [ "kvm-intel" ];
+    boot.kernelModules = [ ];
     boot.extraModulePackages = [ ];
 
+    # Plymouth
+    boot.plymouth.enable = true;
+    boot.plymouth.logo = pkgs.fetchurl {
+        url = "https://nixos.org/logo/nixos-hires.png";
+        sha256 = "1ivzgd7iz0i06y36p8m5w48fd8pjqwxhdaavc0pxs7w1g7mcy5si";
+    };
+    boot.plymouth.theme = "rings";
+    boot.plymouth.themePackages = with pkgs; [
+        (adi1090x-plymouth-themes.override {
+            selected_themes = [ "rings" ];
+        })
+    ];
+    
+    # Enable "Silent boot"
+    boot.consoleLogLevel = 3;
+    boot.initrd.verbose = false;
+    boot.kernelParams = [
+      "quiet"
+      "splash"
+      "boot.shell_on_fail"
+      "udev.log_priority=3"
+      "rd.systemd.show_status=auto"
+    ];
+
+    boot.loader.timeout = 0; # Skip grub, click any key during boot to show
 
     # Users
     users.users = {
@@ -90,6 +116,12 @@
         "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIDiISby1/6Axhrgyic8lzW32PHD3vZ5oDiwaobMVTDso maty@maty-lb"
         "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIC6CDrn0fByLJ4+veIJbyCjUlHc/QbfiUpFMYmT1YJsR maty@mcbp"
     ];
+
+    programs.gnupg.agent = {
+        enable = true;
+        enableSSHSupport = true;
+        #programs.gnupg.agent.pinentryPackage = {};
+    };
 
     # SUDO
     security.sudo.enable = true;

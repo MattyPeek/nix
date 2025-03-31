@@ -4,7 +4,7 @@
 {
     description = "MattyPeek's nix flake";
     inputs = {
-        nixpkgs.url = "github:NixOS/nixpkgs/24.11";
+        nixpkgs.url = "github:NixOS/nixpkgs/unstable";
         nix-darwin.url = "flake:nix-darwin";
         nix-darwin.inputs.nixpkgs.follows = "nixpkgs";
         disko.url = "github:nix-community/disko";
@@ -37,6 +37,7 @@
                     inputs.disko.nixosModules.disko
 	                ./config/natalie/disks.nix
 	                ./config/natalie/system.nix
+	                ./config/natalie/amdgpu.nix
 	                ./config/natalie/packages.nix
 	                ./config/natalie/network.nix
 	                ./config/natalie/firewall.nix
