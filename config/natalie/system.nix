@@ -132,6 +132,9 @@
             if (action.id == "org.debian.pcsc-lite.access_pcsc" && subject.isInGroup("wheel")) {
                 return polkit.Result.YES;
             }
+            if (action.id == "org.debian.pcsc-lite.access_card" && subject.isInGroup("wheel")) {
+                return polkit.Result.YES;
+            }
         });
     '';
 
