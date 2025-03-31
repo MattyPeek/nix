@@ -127,6 +127,14 @@
         #programs.gnupg.agent.pinentryPackage = {};
     };
 
+    security.polkit.extraConfig = ''
+        polkit.addRule(function(action, subject) {
+            if (action.id == "org.debian.pcsc-lite.access_pcsc" && subject.isInGroup("wheel")) {
+                return polkit.Result.YES;
+            }
+        });
+    '';
+
     # SUDO
     security.sudo.enable = true;
     security.sudo.extraRules = [{
