@@ -54,6 +54,7 @@
             firefox
             yubikey-manager
             yubikey-manager-qt
+            yubioath-flutter
         ];
         nixpkgs = {
             config = {
