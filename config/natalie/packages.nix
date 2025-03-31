@@ -11,6 +11,7 @@
             cope
             curl
             bash-completion
+            iproute2
             nix-bash-completions
             neovim
             pinentry-curses

@@ -134,6 +134,10 @@
         }];
     }];
 
+    nix.extraOptions = ''
+        experimental-features = nix-command
+    '';
+
     # Bash setup
     programs.bash = {
         #enable = true; # depricated
