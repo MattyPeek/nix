@@ -19,7 +19,7 @@
             pinentry-curses
             gtop
             vesktop
-            iproute2mac
+            darwin.iproute2mac
             cmatrix
             baobab
             dialog
