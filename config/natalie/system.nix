@@ -70,7 +70,7 @@
             isNormalUser = true;
             initialPassword = "brmbrm";
             description = "Matyas Pesek";
-            extraGroups = [ "networkmanager" "wheel" ];
+            extraGroups = [ "networkmanager" "wheel" "scard" ];
             packages = with pkgs; [
                 #thunderbird
             ];
