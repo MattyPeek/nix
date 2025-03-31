@@ -9,6 +9,7 @@
         
         environment.systemPackages = with pkgs; [
             wimlib
+            cope
             zulu17
             procps
             bash-completion
