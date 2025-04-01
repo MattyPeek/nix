@@ -79,6 +79,7 @@
        "onyx"
        "handbrake"
        #"unetbootin"
+       "obsidian"
      ];
      enable = true;
      masApps = {

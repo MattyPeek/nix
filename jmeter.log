@@ -41,3 +41,9 @@
 2025-03-31 15:12:33,200 INFO o.a.j.s.SampleResult: sampleresult.useNanoTime=true
 2025-03-31 15:12:33,200 INFO o.a.j.s.SampleResult: sampleresult.nanoThreadSleep=5000
 2025-03-31 15:12:33,303 INFO o.a.j.s.FileServer: Set new base='/Users/maty/Documents/VSH'
+2025-03-31 15:27:28,179 ERROR o.a.j.g.a.Save: Could not backup file! Backup directory does not exist, is not a directory or could not be created ! </nix/store/3xc77m33rx9fljpf3k6m7hi2pb9j87zi-jmeter-5.6.3/backups>
+2025-03-31 15:27:35,135 INFO o.a.j.g.a.Load: Loading file: /Users/maty/Documents/VSH/betasuperzoov2.jmx
+2025-03-31 15:27:35,135 INFO o.a.j.s.FileServer: Set new base='/Users/maty/Documents/VSH'
+2025-03-31 15:27:35,135 INFO o.a.j.s.SaveService: Loading file: /Users/maty/Documents/VSH/betasuperzoov2.jmx
+2025-03-31 15:27:35,298 INFO o.a.j.s.FileServer: Set new base='/Users/maty/Documents/VSH'
+2025-03-31 15:28:07,260 ERROR o.a.j.g.a.Save: Could not backup file! Backup directory does not exist, is not a directory or could not be created ! </nix/store/3xc77m33rx9fljpf3k6m7hi2pb9j87zi-jmeter-5.6.3/backups>
