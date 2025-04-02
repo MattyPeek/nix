@@ -56,6 +56,11 @@
             home = "/srv/status";
             uid = 963;
         };
+        valheim = {
+            group = "valheim";
+            home = "/srv/valheim";
+            uid = 964;
+        };
 
     };
     users.groups = {
@@ -63,6 +68,7 @@
         postgres =  { gid = 954; };
         wikijs =    { gid = 962; };
         status =    { gid = 963; };
+        valheim =   { gid = 964; };
     };
 
     # Prompt for password change, if not already changed
