@@ -20,6 +20,7 @@
             pinentry_mac
             pinentry-curses
             gtop
+            btop
             vesktop
             darwin.iproute2mac
             cmatrix
