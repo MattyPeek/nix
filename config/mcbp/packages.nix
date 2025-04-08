@@ -7,7 +7,7 @@
             ];
         };
         
-        environment.systemPackages = with pkgs; [
+        environment.systemPackages = with nixpkgs-unstable; [
             wimlib
             #cope
             zulu17
