@@ -61,7 +61,7 @@
             iterm2
             #disk-inventory-x # x86_64
             raycast
-            (import nixpkgs-unstable { system = "aarch64-darwin"; }).raycast
+            nixpkgs-unstable.raycast
             alt-tab-macos
             #vitetris
             raylib-games
