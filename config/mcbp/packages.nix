@@ -60,7 +60,7 @@
             inkscape
             iterm2
             #disk-inventory-x # x86_64
-            raycast
+            #raycast
             nixpkgs-unstable.raycast
             alt-tab-macos
             #vitetris
