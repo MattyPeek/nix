@@ -62,7 +62,7 @@
             #disk-inventory-x # x86_64
             raycast
             alt-tab-macos
-            vitetris
+            #vitetris
             raylib-games
             #firefox
             pipx
