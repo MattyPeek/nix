@@ -109,6 +109,13 @@ in {
             };
             hostPlatform = "aarch64-darwin";
         };
+        nixpkgs-unstable = {
+            config = {
+                allowUnfree = true;
+                allowBroken = true; # Allow packages marked as broken
+            };
+            hostPlatform = "aarch64-darwin";
+        };
         
         # Fix app aliases
         system.activationScripts.applications.text = lib.mkForce ''
