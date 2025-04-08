@@ -1,6 +1,6 @@
 { config, lib, pkgs, nixpkgs-unstable, ... }: 
 let
-    unstable = import nixpkgs-unstable { system = "x86_64-darwin"; };
+    unstable = import nixpkgs-unstable { system = "x86_64-darwin"; allowUnfree = true; };
 in {
     config = {
         fonts = {
@@ -103,13 +103,6 @@ in {
             brewPrefix = "/opt/homebrew/bin/";
         };
         nixpkgs = {
-            config = {
-                allowUnfree = true;
-                allowBroken = true; # Allow packages marked as broken
-            };
-            hostPlatform = "aarch64-darwin";
-        };
-        nixpkgs-unstable = {
             config = {
                 allowUnfree = true;
                 allowBroken = true; # Allow packages marked as broken
