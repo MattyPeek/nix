@@ -64,7 +64,7 @@ in {
             iterm2
             #disk-inventory-x # x86_64
             #raycast
-            nixpkgs-unstable.raycast
+            unstable.raycast
             alt-tab-macos
             #vitetris
             raylib-games
