@@ -1,6 +1,6 @@
 { config, lib, pkgs, nixpkgs-unstable, ... }: 
 let
-    unstable = nixpkgs-unstable;
+    unstable = import nixpkgs-unstable { system = "x86_64-darwin"; };
 in {
     config = {
         fonts = {
