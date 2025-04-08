@@ -14,7 +14,7 @@
     outputs = {self, nixpkgs, nixpkgs-unstable, nix-darwin, disko, ... }@inputs:{
         darwinConfigurations = {
             mcbp = nix-darwin.lib.darwinSystem {
-	            specialArgs = { inherit inputs nixpkgs-unstable; };
+	            specialArgs = { inherit inputs nixpkgs-unstable nixpkgs; };
                 modules = [
                     ./config/mcbp/packages.nix
                     ./config/mcbp/system.nix
