@@ -62,6 +62,7 @@
             #disk-inventory-x # x86_64
             raycast
             alt-tab-macos
+            vitetris
             #firefox
             pipx
             python312Packages.python
