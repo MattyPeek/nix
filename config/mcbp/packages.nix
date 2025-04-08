@@ -59,7 +59,7 @@ in {
             skhd
             iina
             #blender # broken
-            gimp
+            unstable.gimp
             inkscape
             iterm2
             #disk-inventory-x # x86_64
