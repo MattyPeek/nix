@@ -123,6 +123,7 @@
 
             # Delete the directory to remove old links
             rm -rf "$nix_apps"
+            echo "Creating $nix_apps..."
             mkdir -p "$nix_apps"
             echo "APPLICATIONS: ${config.system.build.applications}/Applications"
             find ${config.system.build.applications}/Applications -maxdepth 1 -type l -exec readlink '{}' + |
