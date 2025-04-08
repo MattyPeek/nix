@@ -1,5 +1,5 @@
 let
-  unstable = import nixpkgs-unstable { system = "x86_64-darwin"; };
+  unstable = nixpkgs-unstable;
 in
 { config, lib, pkgs, nixpkgs-unstable, ... }: {
     config = {
