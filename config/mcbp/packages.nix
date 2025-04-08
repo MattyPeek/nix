@@ -118,7 +118,7 @@
             if ! test -d "$applications"; then
                 echo "Creating $applications folder"
                 mkdir -p "$applications"
-                chown $maty: "$applications"
+                chown "$maty": "$applications"
                 chmod u+w "$applications"
             fi
             echo breakpoint1;
