@@ -1,4 +1,4 @@
-{ config, lib, pkgs, ... }: {
+{ config, lib, pkgs, nixpkgs-unstable, ... }: {
     config = {
         fonts = {
             packages = with pkgs; [
