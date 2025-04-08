@@ -1,7 +1,8 @@
-let
-  unstable = nixpkgs-unstable;
-in
 { config, lib, pkgs, nixpkgs-unstable, ... }: {
+    let
+        unstable = nixpkgs-unstable;
+    in
+
     config = {
         fonts = {
             packages = with pkgs; [
