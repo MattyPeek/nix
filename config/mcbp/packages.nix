@@ -128,7 +128,7 @@ in {
             find ${env}/Applications -maxdepth 1 -type l -exec readlink '{}' + |
             while read -r src; do
                 app_name=$(basename "$src")
-                echo "copying $src" >&2
+                echo "Creating alias for $app_name" >&2
                 ${pkgs.mkalias}/bin/mkalias "$src" "${nixApps}$app_name"
             done
         '';
