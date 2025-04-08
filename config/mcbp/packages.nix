@@ -109,21 +109,23 @@
         # Fix app aliases
         system.activationScripts.applications.text = lib.mkForce ''
             echo "setting up ~/Applications..." >&2
-            applications="$HOME/Applications"
-            nix_apps="$applications/Nix Apps"
+            
+            user="maty"
+            applications="/Users/${user}/Applications"
+            nix_apps="${applications}/Nix Apps"
 
             # Needs to be writable by the user so that home-manager can symlink into it
             if ! test -d "$applications"; then
-                echo "Creating $applications folder"
-                mkdir -p "$applications"
-                chown maty: "$applications"
-                chmod u+w "$applications"
+                echo "Creating ${applications} folder"
+                mkdir -p "${applications}"
+                chown ${maty}: "${applications}"
+                chmod u+w "${applications}"
             fi
             echo breakpoint1;
 
             # Delete the directory to remove old links
+            echo "Recreating $nix_apps..."
             rm -rf "$nix_apps"
-            echo "Creating $nix_apps..."
             mkdir -p "$nix_apps"
             echo "APPLICATIONS: ${config.system.build.applications}/Applications"
             find ${config.system.build.applications}/Applications -maxdepth 1 -type l -exec readlink '{}' + |
@@ -133,8 +135,8 @@
                 # It does understand MacOS aliases though, a unique filesystem feature. Sadly they cannot be created
                 # from bash (as far as I know), so we use the oh-so-great Apple Script instead.
                 /usr/bin/osascript -e "
-                    set fileToAlias to POSIX file \"$src\"
-                    set applicationsFolder to POSIX file \"$nix_apps\"
+                    set fileToAlias to POSIX file \"${src}\"
+                    set applicationsFolder to POSIX file \"${nix_apps}\"
                     tell application \"Finder\"
                     make alias file to fileToAlias at applicationsFolder
                     # This renames the alias; 'mpv.app alias' -> 'mpv.app'
