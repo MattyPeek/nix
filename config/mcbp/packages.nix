@@ -69,61 +69,74 @@
             python312Packages.python
             python312Packages.passlib
             python312Packages.jmespath
-     ];
-   homebrew = {
-     casks = [
-       "hammerspoon"
-       "blender"
-       "firefox"
-       "imageoptim"
-       #"obs"
-       #"gimp"
-       "openzfs"
-       "onyx"
-       "handbrake"
-       #"unetbootin"
-       "obsidian"
-     ];
-     enable = true;
-     masApps = {
-       Keka             = 470158793;
-       GrandPerspective = 1111570163;
-     };
-     onActivation = {
-       autoUpdate = true;
-       #cleanup = "zap";
-       cleanup = "uninstall";
-       upgrade = true;
-     };
-     #brewPrefix = "/usr/local/bin/";
-     brewPrefix = "/opt/homebrew/bin/";
-   };
-   nixpkgs = {
-     config = {
-       allowUnfree = true;
-       allowBroken = true; # Allow packages marked as broken
-     };
-     hostPlatform = "aarch64-darwin";
-   };
-   # Fix app aliases
-   system.activationScripts.applications.text = let
-     env = pkgs.buildEnv {
-       name = "system-applications";
-       paths = config.environment.systemPackages;
-       pathsToLink = "/Applications";
-     };
-   in
-     pkgs.lib.mkForce ''
-       # Set up applications.
-       echo "setting up /Applications..." >&2
-       rm -rf /Applications/Nix\ Apps
-       mkdir -p /Applications/Nix\ Apps
-       find ${env}/Applications -maxdepth 1 -type l -exec readlink '{}' + |
-         while read -r src; do
-           app_name=$(basename "$src")
-           echo "copying $src" >&2
-           ${pkgs.mkalias}/bin/mkalias "$src" "/Applications/Nix Apps/$app_name"
-         done
-     '';
- };
+        ];
+        homebrew = {
+            casks = [
+                "hammerspoon"
+                "blender"
+                "firefox"
+                "imageoptim"
+                #"obs"
+                #"gimp"
+                "openzfs"
+                "onyx"
+                "handbrake"
+                #"unetbootin"
+                "obsidian"
+            ];
+            enable = true;
+            masApps = {
+                Keka             = 470158793;
+                GrandPerspective = 1111570163;
+            };
+            onActivation = {
+                autoUpdate = true;
+                #cleanup = "zap";
+                cleanup = "uninstall";
+                upgrade = true;
+            };
+            #brewPrefix = "/usr/local/bin/";
+            brewPrefix = "/opt/homebrew/bin/";
+        };
+        nixpkgs = {
+            config = {
+                allowUnfree = true;
+                allowBroken = true; # Allow packages marked as broken
+            };
+            hostPlatform = "aarch64-darwin";
+        };
+        
+        # Fix app aliases
+        system.activationScripts.applications.text = lib.mkForce ''
+            echo "setting up ~/Applications..." >&2
+            applications="$HOME/Applications"
+            nix_apps="$applications/Nix Apps"
+
+            # Needs to be writable by the user so that home-manager can symlink into it
+            if ! test -d "$applications"; then
+                mkdir -p "$applications"
+                chown ${username}: "$applications"
+                chmod u+w "$applications"
+            fi
+
+            # Delete the directory to remove old links
+            rm -rf "$nix_apps"
+            mkdir -p "$nix_apps"
+            find ${config.system.build.applications}/Applications -maxdepth 1 -type l -exec readlink '{}' + |
+            while read src; do
+                # Spotlight does not recognize symlinks, it will ignore directory we link to the applications folder.
+                # It does understand MacOS aliases though, a unique filesystem feature. Sadly they cannot be created
+                # from bash (as far as I know), so we use the oh-so-great Apple Script instead.
+                /usr/bin/osascript -e "
+                    set fileToAlias to POSIX file \"$src\"
+                    set applicationsFolder to POSIX file \"$nix_apps\"
+                    tell application \"Finder\"
+                    make alias file to fileToAlias at applicationsFolder
+                    # This renames the alias; 'mpv.app alias' -> 'mpv.app'
+                    set name of result to \"$(rev <<< "$src" | cut -d'/' -f1 | rev)\"
+                    end tell
+                " 1>/dev/null
+             done
+        '';
+    };
 }
