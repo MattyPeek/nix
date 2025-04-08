@@ -19,10 +19,14 @@
                 }
             ];
             postSetup = ''
-                ${pkgs.iptables}/bin/iptables -t nat -A POSTROUTING -s 10.100.0.0/24 -o eth0 -j MASQUERADE
+                ${pkgs.nftables}/bin/nft add table ip nat
+                ${pkgs.nftables}/bin/nft add chain ip nat POSTROUTING { type nat hook postrouting priority 100 \; }
+                ${pkgs.nftables}/bin/nft add rule ip nat POSTROUTING ip saddr 10.100.0.0/24 oifname "eth0" masquerade
             '';
             postShutdown = ''
-                ${pkgs.iptables}/bin/iptables -t nat -D POSTROUTING -s 10.100.0.0/24 -o eth0 -j MASQUERADE
+                ${pkgs.nftables}/bin/nft delete rule ip nat POSTROUTING ip saddr 10.100.0.0/24 oifname "eth0" masquerade
+                ${pkgs.nftables}/bin/nft delete chain ip nat POSTROUTING
+                ${pkgs.nftables}/bin/nft delete table ip nat
             '';
             privateKeyFile = "/srv/wireguard/server.pk";
         };
