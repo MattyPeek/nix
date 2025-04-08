@@ -7,7 +7,7 @@
             ];
         };
         
-        environment.systemPackages = with nixpkgs-unstable; [
+        environment.systemPackages = with pkgs; [
             wimlib
             #cope
             zulu17
@@ -60,7 +60,7 @@
             inkscape
             iterm2
             #disk-inventory-x # x86_64
-            raycast
+            nixpkgs-unstable.raycast
             alt-tab-macos
             #vitetris
             raylib-games
