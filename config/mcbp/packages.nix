@@ -63,6 +63,7 @@
             raycast
             alt-tab-macos
             vitetris
+            raylib-games
             #firefox
             pipx
             python312Packages.python
