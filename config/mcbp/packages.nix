@@ -60,7 +60,8 @@
             inkscape
             iterm2
             #disk-inventory-x # x86_64
-            nixpkgs-unstable.raycast
+            raycast
+            (import nixpkgs-unstable { system = "aarch64-darwin"; }).raycast
             alt-tab-macos
             #vitetris
             raylib-games
