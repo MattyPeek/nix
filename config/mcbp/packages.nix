@@ -115,7 +115,7 @@
             # Needs to be writable by the user so that home-manager can symlink into it
             if ! test -d "$applications"; then
                 mkdir -p "$applications"
-                chown ${username}: "$applications"
+                chown maty: "$applications"
                 chmod u+w "$applications"
             fi
 
