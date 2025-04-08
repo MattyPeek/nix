@@ -11,7 +11,7 @@
         disko.url = "github:nix-community/disko";
         disko.inputs.nixpkgs.follows = "nixpkgs";
     };
-    outputs = {self, nixpkgs, nix-darwin, disko, ... }@inputs:{
+    outputs = {self, nixpkgs, nixpkgs-unstable, nix-darwin, disko, ... }@inputs:{
         darwinConfigurations = {
             mcbp = nix-darwin.lib.darwinSystem {
 	            specialArgs = { inherit inputs; };
