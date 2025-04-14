@@ -56,6 +56,7 @@
             yubikey-manager-qt
             yubioath-flutter
             pcsc-tools
+            sddm
         ];
         nixpkgs = {
             config = {
