@@ -87,7 +87,6 @@ in {
                 "handbrake"
                 #"unetbootin"
                 "obsidian"
-                "keyboardcleantool"
             ];
             enable = true;
             masApps = {
