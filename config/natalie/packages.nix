@@ -27,6 +27,7 @@
             ansible
             asciiquarium
             bat
+            ethtool
             jdk17
             inetutils
             socat
