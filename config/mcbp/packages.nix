@@ -88,6 +88,7 @@ in {
                 #"unetbootin"
                 "obsidian"
                 "keyboardcleantool"
+                "stremio"
             ];
             enable = true;
             masApps = {
