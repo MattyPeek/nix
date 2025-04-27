@@ -12,6 +12,12 @@ services.aerospace = {
             "1" = [ "27E1N1600AE" "built-in" ];
             "2" = "built-in";
             "3" = "DELL";
+            "4" = [ "27E1N1600AE" "built-in" ];
+            "5" = [ "27E1N1600AE" "built-in" ];
+            "6" = [ "27E1N1600AE" "built-in" ];
+            "7" = [ "27E1N1600AE" "built-in" ];
+            "8" = [ "27E1N1600AE" "built-in" ];
+            "9" = [ "27E1N1600AE" "built-in" ];
         };
         mode.main.binding = {
             # Move around
