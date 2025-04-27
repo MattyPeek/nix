@@ -47,10 +47,15 @@ services.aerospace = {
             alt-shift-7 = "move-node-to-workspace 7";
             alt-shift-8 = "move-node-to-workspace 8";
             alt-shift-9 = "move-node-to-workspace 9";
+            # Extra
+            alt-tab = "workspace-back-and-forth";
 
             # Switch layout
             alt-slash = "layout tiles horizontal vertical";
             alt-comma = "layout accordion horizontal vertical";
+
+            # Other
+            alt-shift-f = [ "layout floating tiling" "mode main" ];
         };
     };
 };
