@@ -64,7 +64,7 @@ services.aerospace = {
             alt-shift-f = [ "layout floating tiling" "mode main" ];
 
             # Launching
-            alt-enter = ''
+            alt-shift-t = ''
   exec-and-forget osascript -e '
   tell application "iTerm"
       create window with default profile
