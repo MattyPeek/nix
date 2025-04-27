@@ -24,4 +24,4 @@ services.aerospace = {
         };
     };
 };
-};
+}
