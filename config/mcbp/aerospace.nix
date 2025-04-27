@@ -64,7 +64,7 @@ services.aerospace = {
             alt-shift-f = [ "layout floating tiling" "mode main" ];
 
             # Launching
-            alt-enter = "open -a iTerm";
+            alt-enter = "exec open -a iTerm";
         };
     };
 };
