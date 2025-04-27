@@ -71,7 +71,7 @@ services.aerospace = {
 #      activate
 #  end tell'
 #'';
-            alt-enter = "exec-and-forget iterm2"
+            alt-enter = "exec-and-forget iterm2";
         };
     };
 };
