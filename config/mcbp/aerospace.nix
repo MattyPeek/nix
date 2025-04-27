@@ -8,6 +8,11 @@ services.aerospace = {
             outer.top = 8;
             outer.right = 8;
         };
+        workspace-to-monitor-force-assignment = {
+            "1" = [ "27E1N1600AE" "built-in" ];
+            "2" = "built-in";
+            "3" = "DELL";
+        };
         mode.main.binding = {
             # Move around
             alt-h = "focus left";
