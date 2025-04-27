@@ -1,21 +1,40 @@
 { config, lib, pkgs, ... }: {
-  documentation = {
-    enable = false;
-  };
-  security = {
-    pam = {
-      #services.sudo_local.touchIdAuth = true;
-      enableSudoTouchIdAuth = true;
+    documentation = {
+        enable = false;
     };
-  };
-  services = {
-    #nix-daemon = {
-    #  enable = true;
-    #};
-    sketchybar = {
-      enable = false;
+    security = {
+        pam = {
+            #services.sudo_local.touchIdAuth = true;
+            enableSudoTouchIdAuth = true;
+        };
     };
-  };
+    services = {
+        #nix-daemon = {
+        #  enable = true;
+        #};
+        sketchybar = {
+          enable = false;
+        };
+        aerospace = {
+            enable = true;
+            settings = {
+                gaps = {
+                    outer.left = 8;
+                    outer.bottom = 8;
+                    outer.top = 8;
+                    outer.right = 8;
+                };
+                mode.main.binding = {
+                    alt-h = "focus left";
+                    alt-j = "focus down";
+                    alt-k = "focus up";
+                    alt-l = "focus right";
+                };
+            };
+        };
+    };
+
+
   system = {
     defaults = {
       dock = {
