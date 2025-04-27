@@ -25,6 +25,12 @@ services.aerospace = {
             alt-j = "focus down";
             alt-k = "focus up";
             alt-l = "focus right";
+
+            # Move windows
+            alt-shift-h = "move left";
+            alt-shift-j = "move down";
+            alt-shift-k = "move up";
+            alt-shift-l = "move right";
             
             # Switch workspace
             alt-1 = "workspace 1";
@@ -56,6 +62,15 @@ services.aerospace = {
 
             # Other
             alt-shift-f = [ "layout floating tiling" "mode main" ];
+
+            # Launching
+            alt-enter = ''
+                osascript -e '
+                    tell application "iTerm"
+                        create window with default profile
+                        activate
+                    end tell'
+            '';
         };
     };
 };
