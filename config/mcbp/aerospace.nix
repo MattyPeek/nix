@@ -64,12 +64,14 @@ services.aerospace = {
             alt-shift-f = [ "layout floating tiling" "mode main" ];
 
             # Launching
-            alt-enter = '''exec-and-forget osascript -e '
-tell application "iTerm"
-    create window with default profile
-    activate
-end tell
-' ''';
+            alt-enter = ''
+  exec-and-forget osascript -e '
+  tell application "iTerm"
+      create window with default profile
+      activate
+  end tell'
+'';
+
 
         };
     };
