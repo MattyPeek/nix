@@ -18,6 +18,7 @@
                 modules = [
                     ./config/mcbp/packages.nix
                     ./config/mcbp/system.nix
+                    ./config/mcbp/aerospace.nix
                 ];
             };
         };
