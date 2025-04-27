@@ -64,13 +64,15 @@ services.aerospace = {
             alt-shift-f = [ "layout floating tiling" "mode main" ];
 
             # Launching
-            alt-enter = '''
+            alt-enter = {
+            '''
                 osascript -e '
                     tell application "iTerm"
                         create window with default profile
                         activate
                     end tell'
-            ''';
+            '''
+            };
         };
     };
 };
