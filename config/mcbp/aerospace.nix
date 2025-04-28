@@ -83,7 +83,7 @@ services.aerospace = {
 #  end tell'
 #'';
             alt-enter = "exec-and-forget iterm2";
-            alt-cmd-shift-b = "borders active_color=0xffaa22ff inactive_color=0x449911ee width=5.0";
+            alt-cmd-shift-b = "exec-and-forget borders active_color=0xffaa22ff inactive_color=0x449911ee width=5.0";
         };
     };
 };
