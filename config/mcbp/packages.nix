@@ -57,6 +57,7 @@ in {
             gnupg
             openvpn
             skhd
+            jankyborders
             iina
             #blender # broken
             unstable.gimp
