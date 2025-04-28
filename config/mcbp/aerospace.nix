@@ -35,10 +35,10 @@ services.aerospace = {
             alt-shift-l = "move right";
 
             # Join windows
-            alt-shift-command-h = "join-with left";
-            alt-shift-command-j = "join-with down";
-            alt-shift-command-k = "join-with up";
-            alt-shift-command-l = "join-with right";
+            alt-shift-cmd-h = "join-with left";
+            alt-shift-cmd-j = "join-with down";
+            alt-shift-cmd-k = "join-with up";
+            alt-shift-cmd-l = "join-with right";
             
             # Switch workspace
             alt-1 = "workspace 1";
