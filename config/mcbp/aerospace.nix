@@ -10,6 +10,9 @@ services.aerospace = {
             inner.horizontal = 6;
             inner.vertical = 6;
         };
+        after-startup-command = [
+            "exec-and-forget borders active_color=0xffe1e3e4 inactive_color=0xff494d64 width=5.0"
+        ]
         workspace-to-monitor-force-assignment = {
             "1" = [ "27E1N1600AE" "built-in" ];
             "2" = "built-in";
