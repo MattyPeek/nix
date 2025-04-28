@@ -3,10 +3,12 @@ services.aerospace = {
     enable = true;
     settings = {
         gaps = {
-            outer.left = 8;
-            outer.bottom = 8;
-            outer.top = 8;
-            outer.right = 8;
+            outer.left = 6;
+            outer.bottom = 6;
+            outer.top = 6;
+            outer.right = 6;
+            inner.horizontal = 6;
+            inner.vertical = 6;
         };
         workspace-to-monitor-force-assignment = {
             "1" = [ "27E1N1600AE" "built-in" ];
@@ -31,6 +33,12 @@ services.aerospace = {
             alt-shift-j = "move down";
             alt-shift-k = "move up";
             alt-shift-l = "move right";
+
+            # Join windows
+            alt-shift-command-h = "join-with left";
+            alt-shift-command-j = "join-with down";
+            alt-shift-command-k = "join-with up";
+            alt-shift-command-l = "join-with right";
             
             # Switch workspace
             alt-1 = "workspace 1";
