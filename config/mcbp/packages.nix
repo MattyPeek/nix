@@ -58,6 +58,7 @@ in {
             openvpn
             skhd
             jankyborders
+            mousecape
             iina
             #blender # broken
             unstable.gimp
