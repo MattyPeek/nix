@@ -117,7 +117,7 @@ in {
         # Fix app aliases
         system.activationScripts.applications.text = let
             user = "maty";
-            userApps = "${user}/Applications";
+            userApps = "/Users/${user}/Applications";
             nixApps = "${userApps}/NixApps";
             env = pkgs.buildEnv {
                 name = "system-applications";
@@ -133,7 +133,7 @@ in {
             while read -r src; do
                 app_name=$(basename "$src")
                 echo "Creating alias for $app_name" >&2
-                ${pkgs.mkalias}/bin/mkalias "$src" "${nixApps}$app_name"
+                ${pkgs.mkalias}/bin/mkalias "$src" "${nixApps}/$app_name"
             done
         '';
     };
