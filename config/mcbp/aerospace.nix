@@ -15,7 +15,7 @@ services.aerospace = {
         ];
         workspace-to-monitor-force-assignment = {
             "1" = [ "27E1N1600AE" "built-in" ];
-            "2" = [ "built-in", "Cinema" ];
+            "2" = [ "built-in" "Cinema" ];
             "3" = "DELL";
             "4" = [ "27E1N1600AE" "built-in" ];
             "5" = [ "27E1N1600AE" "built-in" ];
