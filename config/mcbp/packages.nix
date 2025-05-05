@@ -70,7 +70,7 @@ in {
             alt-tab-macos
             #vitetris
             raylib-games
-            firefox
+            #firefox
             pipx
             python312Packages.python
             python312Packages.passlib
