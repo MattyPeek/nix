@@ -70,6 +70,7 @@ in {
             alt-tab-macos
             #vitetris
             raylib-games
+            rpi-imager
             #firefox
             pipx
             python312Packages.python
