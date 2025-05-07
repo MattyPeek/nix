@@ -13,7 +13,7 @@
         #  enable = true;
         #};
         sketchybar = {
-          enable = true;
+          enable = false;
         };
     };
 
