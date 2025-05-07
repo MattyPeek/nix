@@ -14,6 +14,7 @@ in {
             wimlib
             go  
             nodejs_23
+            lynx
             #browsh
             #cope
             zulu17
