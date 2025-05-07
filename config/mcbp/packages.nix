@@ -12,7 +12,7 @@ in {
         
         environment.systemPackages = with pkgs; [
             wimlib
-            browsh
+            #browsh
             #cope
             zulu17
             procps
@@ -93,6 +93,7 @@ in {
                 "obsidian"
                 "keyboardcleantool"
                 "stremio"
+                "browsh"
             ];
             enable = true;
             masApps = {
