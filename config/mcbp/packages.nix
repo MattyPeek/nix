@@ -79,6 +79,9 @@ in {
             python312Packages.jmespath
         ];
         homebrew = {
+            taps = [
+                "browsh-org/homebrew-browsh"
+            ];
             casks = [
                 "hammerspoon"
                 "blender"
