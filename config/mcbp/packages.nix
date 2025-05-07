@@ -80,7 +80,7 @@ in {
         ];
         homebrew = {
             taps = [
-                "browsh-org/homebrew-browsh"
+                #"browsh-org/homebrew-browsh"
             ];
             casks = [
                 "hammerspoon"
@@ -96,7 +96,7 @@ in {
                 "obsidian"
                 "keyboardcleantool"
                 "stremio"
-                "browsh"
+                #"browsh"
             ];
             enable = true;
             masApps = {
