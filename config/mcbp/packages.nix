@@ -15,6 +15,7 @@ in {
             go  
             nodejs_23
             lynx
+            w3m
             #browsh
             #cope
             zulu17
