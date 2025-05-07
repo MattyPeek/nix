@@ -12,6 +12,7 @@ in {
         
         environment.systemPackages = with pkgs; [
             wimlib
+            browsh
             #cope
             zulu17
             procps
