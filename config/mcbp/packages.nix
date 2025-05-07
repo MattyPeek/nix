@@ -96,6 +96,8 @@ in {
                 "obsidian"
                 "keyboardcleantool"
                 "stremio"
+            ];
+            brews = [
                 "browsh"
             ];
             enable = true;
