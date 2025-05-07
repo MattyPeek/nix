@@ -3,12 +3,12 @@ services.aerospace = {
     enable = true;
     settings = {
         gaps = {
-            outer.left = 6;
-            outer.bottom = 6;
-            outer.top = 6;
-            outer.right = 6;
-            inner.horizontal = 6;
-            inner.vertical = 6;
+            outer.left = 10;
+            outer.bottom = 10;
+            outer.top = 10;
+            outer.right = 10;
+            inner.horizontal = 10;
+            inner.vertical = 10;
         };
         after-startup-command = [
             "exec-and-forget /run/current-system/sw/bin/borders active_color=0xffaa22ff inactive_color=0x449911ee width=5.0"
