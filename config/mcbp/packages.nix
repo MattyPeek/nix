@@ -13,6 +13,7 @@ in {
         environment.systemPackages = with pkgs; [
             wimlib
             go  
+            nodejs_23
             #browsh
             #cope
             zulu17
