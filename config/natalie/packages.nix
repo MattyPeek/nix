@@ -8,6 +8,7 @@
         #};
         environment.systemPackages = with pkgs; [
             nix
+            browsh
             #cope
             #(cope.overrideAttrs (oldAttrs: { postInstall = oldAttrs.postInstall or "" + '' rm -f $out/bin/ip ''; }))
             iproute2
