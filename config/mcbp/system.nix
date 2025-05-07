@@ -37,7 +37,7 @@
         "com.apple.mouse.tapBehavior" = 1; # Tap to click
         NSNavPanelExpandedStateForSaveMode = true; # Extended save dialog
         AppleShowAllExtensions = true; # File extesions
-        _HIHideMenuBar = true;
+        _HIHideMenuBar = false; # Hide menubar
       };
       controlcenter.BatteryShowPercentage = true;
       controlcenter.Sound = true;
