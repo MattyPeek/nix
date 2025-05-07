@@ -96,7 +96,7 @@ in {
                 "obsidian"
                 "keyboardcleantool"
                 "stremio"
-                #"browsh"
+                "browsh"
             ];
             enable = true;
             masApps = {
