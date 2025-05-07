@@ -64,6 +64,7 @@ in {
             skhd
             jankyborders
             mousecape
+            sketchybar
             iina
             #blender # broken
             unstable.gimp
