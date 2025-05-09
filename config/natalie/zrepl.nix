@@ -32,10 +32,10 @@
                     interval = "300s";
                 };
                 pruning = {
-                    keep = {
+                    keep = [{
                         type = "last-n";
                         count = "10";
-                    };
+                    }];
                 };
             }
             ];
