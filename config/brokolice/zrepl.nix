@@ -18,8 +18,8 @@
                 
                 root_fs = "pool1/backup";
                 serve = {
-                    type = "ssh";
-                    client_identity = "push";
+                    type = "stdinserver";
+                    client_identity = "natalie";
                     listen = ":8888";
                 };
             }
