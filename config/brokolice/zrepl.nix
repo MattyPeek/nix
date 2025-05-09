@@ -20,7 +20,6 @@
                 serve = {
                     type = "stdinserver";
                     client_identities = [ "natalie" ];
-                    listen = ":8888";
                 };
             }
             ];
