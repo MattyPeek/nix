@@ -31,6 +31,7 @@
 	                ./config/brokolice/system.nix
 	                ./config/brokolice/nginx.nix
 	                ./config/brokolice/services.nix
+	                ./config/brokolice/zrepl.nix
                 ];
             };
             natalie = nixpkgs.lib.nixosSystem {
