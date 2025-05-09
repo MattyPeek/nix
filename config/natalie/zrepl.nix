@@ -9,19 +9,19 @@
                   level: warn
             jobs:
               - name: natalie-backup
-                type: source
-                send:
-                  large_blocks: true
-                  compressed: true
+                type: push
+                connect:
+                  type: ssh+stdinserver
+                  host: brokolice.pesek.pro
+                  user: maty
+                  port: 412
+                  identity_file: /etc/zrepl/ssh/id_ed25519
+                  client_identity: pushclient
+                  options:
+                    - "Compression=yes"
                 filesystems: {
                   "pool1/system": true,
                 }
-                serve:
-                  type: tcp
-                  listen: "78.24.8.73:8888"
-                  clients: {
-                    "93.185.110.51" : "brokolice"
-                  }
                 snapshotting:
                   type: periodic
                   prefix: zrepl_
