@@ -21,7 +21,6 @@
                     user = "maty";
                     port = 412;
                     identity_file = "/etc/zrepl/ssh/id_ed25519";
-                    client_identity = "pushclient";
                     options = [ "Compression=yes" ];
                 };
                 filesystems = {
@@ -32,9 +31,14 @@
                     prefix = "zrepl_";
                     interval = "300s";
                 };
+                pruning = {
+                    keep = {
+                        type = "last-n";
+                        count = "10";
+                    };
+                };
             }
             ];
         };
-
-    };
-                                   }
+    };                                   
+}
