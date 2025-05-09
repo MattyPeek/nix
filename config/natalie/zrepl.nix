@@ -19,7 +19,7 @@
                     type = "ssh+stdinserver";
                     host = "brokolice.pesek.pro";
                     user = "maty";
-                    port = 412;
+                    port = 8888;
                     identity_file = "/etc/zrepl/ssh/id_ed25519";
                     options = [ "Compression=yes" ];
                 };
