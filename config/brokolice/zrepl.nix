@@ -21,8 +21,8 @@
                     type = "stdinserver";
                     client_identities = [ "natalie" ];
                 };
-                placeholder_encryption = {
-                    "inherit" = "true";
+                recv = {
+                    placeholder = "inherit";
                 };
             }
             ];
