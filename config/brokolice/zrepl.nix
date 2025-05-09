@@ -19,8 +19,8 @@
                 root_fs = "pool1/backup";
                 serve = {
                     type = "stdinserver";
-                    client_identity = "natalie";
-                    listen = ":8888";
+                    client_identities = [ "natalie" ];
+                    #listen = ":8888";
                 };
             }
             ];
