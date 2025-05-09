@@ -32,10 +32,18 @@
                     interval = "300s";
                 };
                 pruning = {
-                    keep = [{
-                        type = "last-n";
-                        count = "10";
-                    }];
+                    keep_sender = [
+                    {
+                        type = "last_n";
+                        count = 10;
+                    }
+                    ];
+                    keep_receiver = [
+                    {
+                        type = "last_n";
+                        count = 10;
+                    }
+                    ];
                 };
             }
             ];
