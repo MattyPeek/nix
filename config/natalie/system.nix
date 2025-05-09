@@ -150,7 +150,7 @@
     }];
 
     nix.extraOptions = ''
-        experimental-features = nix-command
+        experimental-features = nix-command flakes
     '';
 
     # Bash setup

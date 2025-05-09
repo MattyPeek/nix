@@ -3,6 +3,10 @@
     # System version
     system.stateVersion = "24.05";
 
+    nix.extraOptions = ''
+        experimental-features = nix-command flakes
+    '';
+
     # Disable documentation to save up some time compiling
     documentation.enable = false;
 
