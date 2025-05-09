@@ -23,25 +23,31 @@
                     identity_file = "/etc/zrepl/ssh/id_ed25519";
                     options = [ "Compression=yes" ];
                 };
+                send = {
+                    encrypted = "inherit";
+                    properties= "true";
+                    recursive = "true";
+                };
                 filesystems = {
                     "pool1/system" = true;
                 };
                 snapshotting = {
                     type = "periodic";
                     prefix = "zrepl_";
-                    interval = "300s";
+                    interval = "5m";
                 };
                 pruning = {
                     keep_sender = [
                     {
                         type = "last_n";
-                        count = 10;
+                        count = 12;
                     }
                     ];
                     keep_receiver = [
                     {
-                        type = "last_n";
-                        count = 10;
+                        type = "grid";
+                        grid = "1x1h(keep=all) | 24x1h | 7x1d";
+                        regex = "^zrepl_.*";
                     }
                     ];
                 };
