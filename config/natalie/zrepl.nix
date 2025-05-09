@@ -24,12 +24,12 @@
                     options = [ "Compression=yes" ];
                 };
                 send = {
-                    encrypted = "inherit";
+                    #encrypted = "true";
+                    large_blocks = "true";
                     properties= "true";
-                    recursive = "true";
                 };
                 filesystems = {
-                    "pool1/system" = true;
+                    "pool1/system<" = true;
                 };
                 snapshotting = {
                     type = "periodic";
