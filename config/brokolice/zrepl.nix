@@ -22,7 +22,7 @@
                     client_identities = [ "natalie" ];
                 };
                 placeholder_encryption = {
-                    inherit = "true";
+                    "inherit" = "true";
                 };
             }
             ];
