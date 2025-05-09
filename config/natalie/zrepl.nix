@@ -26,7 +26,7 @@
                 send = {
                     #encrypted = "true";
                     large_blocks = true;
-                    properties= true;
+                    #properties= true;
                 };
                 filesystems = {
                     "pool1/system<" = true;
