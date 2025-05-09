@@ -86,6 +86,7 @@
     users.users.maty.openssh.authorizedKeys.keys = [
         "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAICnzRi2d8ONpPjM1VHWf1WngyG0UqAQ/BX8lXsyVUKct pesek@vshosting.cz"
         "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIDiISby1/6Axhrgyic8lzW32PHD3vZ5oDiwaobMVTDso maty@maty-lb"
+        "command="zrepl stdinserver CLIENT_IDENTITY",restrict ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIBe3PgHQdmgwtmtmDO3Z9TOOjE/LHS8W6692L/UzzkiB"
     ];
 
     # SUDO
