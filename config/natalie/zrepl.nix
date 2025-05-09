@@ -1,7 +1,7 @@
 { config, lib, pkgs, disko, ... }: {
     services.zrepl = {
         enable = true;
-        settings = {
+        settings = ''
             global:
               logging:
                 - type: syslog
@@ -26,6 +26,6 @@
                   type: periodic
                   prefix: zrepl_
                   interval: 300s
-        };
+        '';
     };
 }
