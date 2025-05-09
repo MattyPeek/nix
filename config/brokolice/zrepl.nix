@@ -20,12 +20,13 @@
                 serve = {
                     type = "stdinserver";
                     client_identities = [ "natalie" ];
-                    socket_dir = "/var/run/zrepl/stdinserver";
-                    socket_permissions = {
-                        user = "maty";
-                        group = "zrepl";
-                        mode = "0770";
-                    };
+                    # Since vers. 0.7.0
+                    #socket_dir = "/var/run/zrepl/stdinserver";
+                    #socket_permissions = {
+                    #    user = "maty";
+                    #    group = "zrepl";
+                    #    mode = "0770";
+                    #};
                 };
                 recv = {
                     placeholder = {
