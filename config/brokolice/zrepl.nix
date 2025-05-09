@@ -37,7 +37,8 @@
             ];
         };
     };                                   
-    #systemd.services.zrepl.serviceConfig.ExecStartPost = lib.mkAfter [
-    #    "/run/current-system/sw/bin/chown maty:zrepl /var/run/zrepl/stdinserver/*"
-    #];
+    systemd.services.zrepl.serviceConfig.ExecStartPost = lib.mkAfter [
+        "/run/current-system/sw/bin/chown :zrepl /var/run/zrepl/stdinserver/*"
+        "/run/current-system/sw/bin/chmod 0770 /var/run/zrepl/stdinserver/*"
+    ];
 }
