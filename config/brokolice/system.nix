@@ -35,7 +35,7 @@
             isNormalUser = true;
             initialPassword = "brmbrm";
             description = "Matyas Pesek";
-            extraGroups = [ "networkmanager" "wheel" ];
+            extraGroups = [ "networkmanager" "wheel" "zrepl" ];
             packages = with pkgs; [
                 #thunderbird
             ];
@@ -68,6 +68,7 @@
 
     };
     users.groups = {
+        zrepl =  { gid = 888; };
         transfer =  { gid = 951; };
         postgres =  { gid = 954; };
         wikijs =    { gid = 962; };
