@@ -38,21 +38,6 @@
         };
     };                                   
     systemd.services.zrepl.serviceConfig.ExecStartPost = lib.mkAfter [
-        ''
-            /run/current-system/sw/bin/bash -c '
-                echo "Running chown script..."
-                for i in {1..10}; do
-                    if compgen -G "/var/run/zrepl/stdinserver/*" > /dev/null; then
-                        /run/current-system/sw/bin/chown :zrepl /var/run/zrepl/stdinserver/*
-                        /run/current-system/sw/bin/chmod 0770 /var/run/zrepl/stdinserver/*
-                        echo "chown succeeded..."
-                        exit 0
-                    fi
-                    sleep 0.5
-                done
-                echo "Socket did not appear in time" >&2
-                exit 1
-            '
-        ''
+        "/run/current-system/sw/bin/bash -c 'echo \"Running chown script...\"; for i in {1..10}; do if compgen -G \"/var/run/zrepl/stdinserver/*\" > /dev/null; then /run/current-system/sw/bin/chown :zrepl /var/run/zrepl/stdinserver/* ; /run/current-system/sw/bin/chmod 0770 /var/run/zrepl/stdinserver/* ; echo \"chown succeeded...\"; exit 0; fi; sleep 0.5; done; echo \"Socket did not appear in time\" >&2 ; exit 1 ; ' "
     ];
 }
