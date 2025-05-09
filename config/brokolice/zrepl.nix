@@ -22,7 +22,9 @@
                     client_identities = [ "natalie" ];
                 };
                 recv = {
-                    placeholder = "inherit";
+                    placeholder = {
+                        encryption = "inherit";
+                    };
                 };
             }
             ];
