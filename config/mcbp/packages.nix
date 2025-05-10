@@ -26,6 +26,7 @@ in {
             neovim
             htop
             iperf
+            aldente
             pinentry_mac
             pinentry-curses
             gtop
