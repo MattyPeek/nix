@@ -16,7 +16,7 @@ in {
             nodejs_23
             lynx
             w3m
-            qutebrowser
+            #qutebrowser
             #browsh
             #cope
             zulu17
@@ -102,6 +102,7 @@ in {
                 "obsidian"
                 "keyboardcleantool"
                 "stremio"
+                "qutebrowser"
             ];
             brews = [
                 "browsh"
