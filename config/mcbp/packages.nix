@@ -138,12 +138,12 @@ in {
                      super.pkg-config
                      ];
                      buildInputs = (old.buildInputs or []) ++ [
-                     super.libdrm
-                     super.pcre2
+                     super.pcre2.dev
+                     super.libdrm.dev
                      ];
                      });
              })
-        ];
+        ];      
         
         # Fix app aliases
         system.activationScripts.applications.text = let
