@@ -145,6 +145,20 @@ in {
             };
             hostPlatform = "aarch64-darwin";
         };
+
+        nixpkgs.overlays = [
+            (self: super: {
+             webkitgtk = super.webkitgtk.overrideAttrs (old: {
+                     nativeBuildInputs = (old.nativeBuildInputs or []) ++ [
+                     super.pkg-config
+                     ];
+                     buildInputs = (old.buildInputs or []) ++ [
+                     super.libdrm
+                     super.pcre2
+                     ];
+                     });
+             })
+        ];
         
         # Fix app aliases
         system.activationScripts.applications.text = let
