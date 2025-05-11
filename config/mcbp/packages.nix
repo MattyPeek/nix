@@ -16,6 +16,7 @@ in {
             nodejs_23
             lynx
             w3m
+            surf
             #qutebrowser
             #browsh
             #cope
