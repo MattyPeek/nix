@@ -141,9 +141,12 @@ in {
                      super.pcre2.dev
                      super.libdrm.dev
                      ];
+                     cmakeFlags = (old.cmakeFlags or []) ++ [
+                     "-DUSE_LIBDRM=OFF"
+                     ];
                      });
              })
-        ];      
+        ];
         
         # Fix app aliases
         system.activationScripts.applications.text = let
