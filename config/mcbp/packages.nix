@@ -2,6 +2,21 @@
 let
     unstable = import nixpkgs-unstable { system = "x86_64-darwin"; config = { allowUnfree = true; }; };
 in {
+
+    nixpkgs.overlays = [
+        (self: super: {
+            webkitgtk = super.webkitgtk.overrideAttrs (old: {
+                nativeBuildInputs = (old.nativeBuildInputs or []) ++ [
+                    super.pkg-config
+                ];
+                buildInputs = (old.buildInputs or []) ++ [
+                    super.libdrm
+                    super.pcre2
+                ];
+            });
+        })
+    ];
+
     config = {
         fonts = {
             packages = with pkgs; [
