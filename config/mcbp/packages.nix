@@ -16,9 +16,10 @@ in {
             nodejs_23
             lynx
             w3m
-            surf
+            #surf
             #qutebrowser
             #browsh
+            mutt
             #cope
             zulu17
             procps
@@ -131,23 +132,6 @@ in {
             hostPlatform = "aarch64-darwin";
         };
 
-        nixpkgs.overlays = [
-            (self: super: {
-             webkitgtk = super.webkitgtk.overrideAttrs (old: {
-                     nativeBuildInputs = (old.nativeBuildInputs or []) ++ [
-                     super.pkg-config
-                     ];
-                     buildInputs = (old.buildInputs or []) ++ [
-                     super.pcre2.dev
-                     super.libdrm.dev
-                     ];
-                     cmakeFlags = (old.cmakeFlags or []) ++ [
-                     "-DUSE_LIBDRM=OFF"
-                     ];
-                     });
-             })
-        ];
-        
         # Fix app aliases
         system.activationScripts.applications.text = let
             user = "maty";
