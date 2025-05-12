@@ -20,6 +20,7 @@ in {
             #qutebrowser
             #browsh
             mutt
+            neomutt
             #cope
             zulu17
             procps
