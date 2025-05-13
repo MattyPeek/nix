@@ -43,6 +43,18 @@
                     '';
                 };
             };
+
+            "countdown.pesek.pro" = {
+                enableACME = true;
+                forceSSL = true;
+                root = "/srv/countdown";
+                locations."/" = {
+                    extraConfig = ''
+                        try_files $uri /index.html;
+                        default_type text/plain;
+                    '';
+                };
+            };
             
             "status.pesek.pro" = {
                 enableACME = true;
