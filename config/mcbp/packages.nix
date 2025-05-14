@@ -14,6 +14,7 @@ in {
             wimlib
             go  
             nodejs_23
+            nodePackages.typescript
             lynx
             w3m
             #surf
