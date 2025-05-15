@@ -20,6 +20,7 @@ in {
             #surf
             #qutebrowser
             #browsh
+            librewolf
             mutt
             neomutt
             #cope
