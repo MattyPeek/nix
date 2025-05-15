@@ -20,7 +20,7 @@ in {
             #surf
             #qutebrowser
             #browsh
-            librewolf-unwrapped
+            #librewolf-unwrapped
             mutt
             neomutt
             #cope
@@ -98,6 +98,7 @@ in {
                 "hammerspoon"
                 "blender"
                 "firefox"
+                "librewolf"
                 "imageoptim"
                 #"obs"
                 #"gimp"
