@@ -98,7 +98,7 @@ in {
                 "hammerspoon"
                 "blender"
                 "firefox"
-                "librewolf"
+                #"librewolf"
                 "imageoptim"
                 #"obs"
                 #"gimp"
