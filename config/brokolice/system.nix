@@ -28,6 +28,8 @@
     networking.hostId = "15172c82"; # head -c 8 /etc/machine-id # for import/export to work
     #networking.hostId = "abfbceac"; # pmcllab
 
+    services.qemuGuest.enable = true;
+
     # Users
     users.users = {
         maty = {
