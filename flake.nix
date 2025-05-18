@@ -47,6 +47,7 @@
 	                ./config/natalie/wireguard.nix
 	                ./config/natalie/desktop.nix
 	                ./config/natalie/zrepl.nix
+	                ./config/natalie/games.nix
                 ];
             };
         };
