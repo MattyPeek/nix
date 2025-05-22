@@ -1,6 +1,6 @@
 { config, lib, pkgs, ... }: {
 services.aerospace = {
-    enable = true;
+    enable = false;
     settings = {
         gaps = {
             outer.left = 10;
