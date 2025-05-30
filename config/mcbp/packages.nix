@@ -112,6 +112,7 @@ in {
                 "stremio"
                 "qutebrowser"
                 "sequel-ace"
+                "mysql-client"
             ];
             brews = [
                 "browsh"
