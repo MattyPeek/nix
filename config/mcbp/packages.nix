@@ -12,7 +12,6 @@ in {
         
         environment.systemPackages = with pkgs; [
             wimlib
-            sequel-ace
             go  
             nodejs_23
             nodePackages.typescript
@@ -112,6 +111,7 @@ in {
                 "keyboardcleantool"
                 "stremio"
                 "qutebrowser"
+                "sequel-ace"
             ];
             brews = [
                 "browsh"
