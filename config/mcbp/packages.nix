@@ -12,6 +12,7 @@ in {
         
         environment.systemPackages = with pkgs; [
             wimlib
+            sequel-ace
             go  
             nodejs_23
             nodePackages.typescript
