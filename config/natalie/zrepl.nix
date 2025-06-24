@@ -52,6 +52,28 @@
                     ];
                 };
             }
+            {
+                name = "brokolice-backup";
+                type = "sink";
+
+                root_fs = "pool1/backup";
+                serve = {
+                    type = "stdinserver";
+                    client_identities = [ "brokolice" ];
+                    # Since vers. 0.7.0
+                    #socket_dir = "/var/run/zrepl/stdinserver";
+                    #socket_permissions = {
+                    #    user = "maty";
+                    #    group = "zrepl";
+                    #    mode = "0770";
+                    #};
+                };
+                recv = {
+                    placeholder = {
+                        encryption = "inherit";
+                    };
+                };
+            }
             ];
         };
     };                                   
