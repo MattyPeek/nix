@@ -120,7 +120,7 @@
         "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAICnzRi2d8ONpPjM1VHWf1WngyG0UqAQ/BX8lXsyVUKct pesek@vshosting.cz"
         "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIDiISby1/6Axhrgyic8lzW32PHD3vZ5oDiwaobMVTDso maty@maty-lb"
         "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIC6CDrn0fByLJ4+veIJbyCjUlHc/QbfiUpFMYmT1YJsR maty@mcbp"
-        "command=\"zrepl stdinserver natalie\",restrict ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIGU4PkOUd+0KGcfbWAez5AjSyg9fvV4+Z1Z8yQxfoEw0 root@brokolice"
+        "command=\"zrepl stdinserver brokolice\",restrict ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIGU4PkOUd+0KGcfbWAez5AjSyg9fvV4+Z1Z8yQxfoEw0 root@brokolice"
     ];
 
     programs.gnupg.agent = {
