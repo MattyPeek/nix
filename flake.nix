@@ -47,7 +47,7 @@
 	                ./config/natalie/firewall.nix
 	                ./config/natalie/wireguard.nix
 	                ./config/natalie/desktop.nix
-	                #./config/natalie/zrepl-receive.nix
+	                ./config/natalie/zrepl-receive.nix
 	                ./config/natalie/zrepl-send.nix
 	                #./config/natalie/games.nix
                 ];

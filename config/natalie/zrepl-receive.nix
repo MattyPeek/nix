@@ -13,13 +13,13 @@
             };
             jobs = [
             {
-                name = "natalie-backup";
+                name = "brokolice-backup";
                 type = "sink";
                 
                 root_fs = "pool1/backup";
                 serve = {
                     type = "stdinserver";
-                    client_identities = [ "natalie" ];
+                    client_identities = [ "brokolice" ];
                     # Since vers. 0.7.0
                     #socket_dir = "/var/run/zrepl/stdinserver";
                     #socket_permissions = {
