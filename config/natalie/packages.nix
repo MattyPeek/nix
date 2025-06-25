@@ -17,6 +17,7 @@
             killall
             curl
             bash-completion
+            dmidecode
             nix-bash-completions
             neovim
             pinentry-curses
