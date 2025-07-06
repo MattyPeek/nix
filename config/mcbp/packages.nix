@@ -114,6 +114,7 @@ in {
                 "sequel-ace"
                 "mysql-shell"
                 "mysql-client"
+                "android-commandlinetools"
             ];
             brews = [
                 "browsh"
