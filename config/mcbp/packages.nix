@@ -88,6 +88,7 @@ in {
             pipx
             python312Full
             python310Full
+            python310Packages.python
             python312Packages.python
             python312Packages.passlib
             python312Packages.jmespath
