@@ -62,7 +62,6 @@ in {
             ncurses
             neofetch
             wimlib
-            python3Full
             pkgconf
             sqlite
             wget
@@ -87,10 +86,11 @@ in {
             #rpi-imager
             #firefox
             pipx
+            python312Full
+            python310Full
             python312Packages.python
             python312Packages.passlib
             python312Packages.jmespath
-            python310
         ];
         homebrew = {
             taps = [
