@@ -32,6 +32,7 @@ in {
             neovim
             htop
             iperf
+            catdoc
             aldente
             pinentry_mac
             pinentry-curses
