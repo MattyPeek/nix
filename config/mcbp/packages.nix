@@ -33,6 +33,7 @@ in {
             htop
             iperf
             catdoc
+            antiword
             aldente
             pinentry_mac
             pinentry-curses
