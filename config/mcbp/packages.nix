@@ -108,7 +108,7 @@ in {
                 #"obs"
                 #"gimp"
                 "openzfs"
-                "onyx"
+                #"onyx"
                 "handbrake"
                 #"unetbootin"
                 "obsidian"
@@ -117,7 +117,7 @@ in {
                 "qutebrowser"
                 "sequel-ace"
                 "mysql-shell"
-                "mysql-client"
+                #"mysql-client"
                 "android-commandlinetools"
             ];
             brews = [
