@@ -24,6 +24,7 @@ in {
             #librewolf-unwrapped
             mutt
             neomutt
+            tmux
             #cope
             zulu17
             procps
