@@ -12,6 +12,7 @@ in {
         
         environment.systemPackages = with pkgs; [
             wimlib
+            nmap
             go  
             nodejs_23
             nodePackages.typescript
