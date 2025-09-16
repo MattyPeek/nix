@@ -7,6 +7,8 @@
    #};
    environment.systemPackages = with pkgs; [
        nix
+       tcpdump
+       nmap
        curl
        bash-completion
        nix-bash-completions
