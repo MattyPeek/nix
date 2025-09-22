@@ -11,6 +11,7 @@
             browsh
             #cope
             #(cope.overrideAttrs (oldAttrs: { postInstall = oldAttrs.postInstall or "" + '' rm -f $out/bin/ip ''; }))
+            discord
             iproute2
             pciutils
             usbutils
