@@ -60,12 +60,6 @@
 
     boot.loader.timeout = 0; # Skip grub, click any key during boot to show
 
-    hardware.firmware = {
-        enable = true;
-        linuxFirmware = true;  # This installs linux-firmware package which contains AMD GPU firmware files
-    };
-
-
     # SmartCard support
     services.pcscd.enable = true;
     services.udev.packages = [ pkgs.yubikey-personalization ];

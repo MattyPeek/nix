@@ -47,6 +47,7 @@
 	                ./config/natalie/disks.nix
 	                ./config/natalie/system.nix
 	                ./config/natalie/amdgpu.nix
+	                ./config/natalie/amdgpu_patch.nix
 	                ./config/natalie/packages.nix
 	                ./config/natalie/network.nix
 	                ./config/natalie/firewall.nix
