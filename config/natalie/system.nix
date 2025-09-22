@@ -60,6 +60,8 @@
 
     boot.loader.timeout = 0; # Skip grub, click any key during boot to show
 
+    hardware.enableRedistributableFirmware
+
     # SmartCard support
     services.pcscd.enable = true;
     services.udev.packages = [ pkgs.yubikey-personalization ];
