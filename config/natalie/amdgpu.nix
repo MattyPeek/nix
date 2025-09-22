@@ -1,13 +1,14 @@
 {config, lib, pkgs, ...}: {
 
-    hardware.graphics.extraPackages = with pkgs; [
-        rocmPackages.clr.icd
-    ];
+    #hardware.graphics.extraPackages = with pkgs; [
+    #    rocmPackages.clr.icd
+    #];
+    #
+    #environment.systemPackages = with pkgs; [
+    #    clinfo
+    #];
     
-    environment.systemPackages = with pkgs; [
-        clinfo
-    ];
-    
+    hardware.graphics.enable = true;
     hardware.graphics.enable32Bit = true;
 
 
