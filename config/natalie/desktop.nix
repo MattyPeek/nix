@@ -8,7 +8,7 @@
 	#services.xserver.desktopManager.plasma5.enable = true;
 
     # Disable display manager systemd unit.
-    services.displayManager.enable = false;
+    services.displayManager.enable = true;
 	
 	services.displayManager.defaultSession = "plasma"; # wayland plasma
 
