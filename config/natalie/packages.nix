@@ -57,7 +57,6 @@
             traceroute
             firefox
             yubikey-manager
-            yubikey-manager-qt
             yubioath-flutter
             pcsc-tools
         ];
