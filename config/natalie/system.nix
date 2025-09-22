@@ -3,7 +3,7 @@
     networking.hostName = "natalie";
 
     # System version
-    system.stateVersion = "24.11";
+    system.stateVersion = "25.05";
 
     # Disable documentation to save up some time compiling
     documentation.enable = false;
