@@ -1,7 +1,7 @@
 { config, lib, pkgs, ... }: {
 
 	#services.xserver.enable = true;
-	services.xserver.videoDrivers = [ "amdgpu" ];
+	#services.xserver.videoDrivers = [ "amdgpu" ];
 	services.displayManager.sddm.enable = true;
 	services.displayManager.sddm.wayland.enable = true; # wayland sddm
 	services.desktopManager.plasma6.enable = true;
