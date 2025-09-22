@@ -28,7 +28,8 @@
     networking.hostId = "86658b80"; # head -c 8 /etc/machine-id # for import/export to work
     
     # Kernel modules
-    boot.initrd.availableKernelModules = [ "ata_piix" "uhci_hcd" "sd_mod" "sr_mod" "amdgpu" ];
+    #boot.initrd.availableKernelModules = [ "ata_piix" "uhci_hcd" "sd_mod" "sr_mod" "amdgpu" ];
+    boot.initrd.availableKernelModules = [ "ata_piix" "uhci_hcd" "sd_mod" "sr_mod" ];
     boot.initrd.kernelModules = [ ];
     boot.kernelModules = [ ];
     boot.extraModulePackages = [ ];
