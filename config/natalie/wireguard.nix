@@ -18,6 +18,10 @@
                     publicKey = "dSI+/Q5AlwJRCqYi1JdcadTKwAxuBG7u/R6EgzFn4W4=";
                     allowedIPs = [ "10.0.1.3/32" "fd42:42:42::3"];
                 }
+                {# boruvka-win
+                    publicKey = "ECHN0QVlGFNzTIU+RQocywgw0OrLI+X7B5C/I/mSonY=";
+                    allowedIPs = [ "10.0.1.4/32" "fd42:42:42::3"];
+                }
             ];
             postSetup = ''
                 ${pkgs.nftables}/bin/nft add table ip nat
