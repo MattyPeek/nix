@@ -19,7 +19,7 @@
                     allowedIPs = [ "10.0.1.3/32" "fd42:42:42::3"];
                 }
                 {# boruvka-win
-                    publicKey = "ECHN0QVlGFNzTIU+RQocywgw0OrLI+X7B5C/I/mSonY=";
+                    publicKey = "cwQLstrW1ZZ3eFDhqF8yCI0CkChK6gMx6XOQWZOOLBs=";
                     allowedIPs = [ "10.0.1.4/32" "fd42:42:42::4"];
                 }
             ];
