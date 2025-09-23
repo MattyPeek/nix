@@ -15,6 +15,7 @@
             iproute2
             pciutils
             usbutils
+            tcpdump
             killall
             curl
             bash-completion
