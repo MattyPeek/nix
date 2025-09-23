@@ -20,7 +20,7 @@
                 }
                 {# boruvka-win
                     publicKey = "ECHN0QVlGFNzTIU+RQocywgw0OrLI+X7B5C/I/mSonY=";
-                    allowedIPs = [ "10.0.1.4/32" "fd42:42:42::3"];
+                    allowedIPs = [ "10.0.1.4/32" "fd42:42:42::4"];
                 }
             ];
             postSetup = ''
