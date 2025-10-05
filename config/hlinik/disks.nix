@@ -61,6 +61,7 @@
                     "normalization" = "none";
                     "xattr" = "sa";
                     "encryption" = "on";
+                    "keyformat" = "passphrase";
                 };
                 postCreateHook = "zfs list -t snapshot -H -o name | grep -E '^pool1@blank$' || zfs snapshot pool1@blank";
                 
