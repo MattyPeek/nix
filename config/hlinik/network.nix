@@ -2,7 +2,7 @@
 
     networking.networkmanager.enable = true;
 
-    networking.useDHCP = true;
+    #networking.useDHCP = true;
 
     #networking.interfaces.enp4s0 = {
     #    ipv4 = {
