@@ -51,6 +51,22 @@
 	                #./config/natalie/games.nix
                 ];
             };
+            hlinik = nixpkgs.lib.nixosSystem {
+	            specialArgs = { inherit inputs disko; };
+                modules = [
+                    inputs.disko.nixosModules.disko
+	                ./config/hlinik/disks.nix
+	                ./config/hlinik/system.nix
+	                #./config/hlinik/amdgpu.nix
+	                ./config/hlinik/nvidia.nix
+	                ./config/hlinik/packages.nix
+	                ./config/hlinik/network.nix
+	                ./config/hlinik/firewall.nix
+	                #./config/hlinik/wireguard.nix
+	                ./config/hlinik/desktop.nix
+	                #./config/hlinik/zrepl.nix
+                ];
+            };
         };
     };
 }
