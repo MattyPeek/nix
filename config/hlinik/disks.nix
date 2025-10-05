@@ -60,6 +60,7 @@
                     "utf8only" = "off";
                     "normalization" = "none";
                     "xattr" = "sa";
+                    "encryption" = "on";
                 };
                 postCreateHook = "zfs list -t snapshot -H -o name | grep -E '^pool1@blank$' || zfs snapshot pool1@blank";
                 
