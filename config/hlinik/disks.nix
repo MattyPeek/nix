@@ -3,7 +3,7 @@
 
 { lib, ... }: {
 
-    disko.devices.disk = lib.genAttrs [ "nvme1n1" ] (name: {
+    disko.devices.disk = lib.genAttrs [ "nvme0n1" ] (name: {
         type = "disk";
         device = "/dev/${name}";
         content = {
