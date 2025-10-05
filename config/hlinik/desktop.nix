@@ -2,8 +2,8 @@
 
 	#services.xserver.enable = true;
 	#services.xserver.videoDrivers = [ "amdgpu" ];
-	services.displayManager.sddm.enable = true;
-	#services.displayManager.sddm.wayland.enable = true; # wayland sddm
+	#services.displayManager.sddm.enable = true;
+	services.displayManager.sddm.wayland.enable = true; # wayland sddm
 	services.desktopManager.plasma6.enable = true;
 	#services.xserver.desktopManager.plasma5.enable = true;
 
