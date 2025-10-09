@@ -98,6 +98,7 @@ in {
             python312Packages.python
             python312Packages.passlib
             python312Packages.jmespath
+            matterhorn
         ];
         homebrew = {
             taps = [
