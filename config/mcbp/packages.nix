@@ -80,7 +80,8 @@ in {
             #sketchybar
             iina
             #blender # broken
-            unstable.gimp
+            #unstable.gimp
+            gimp3
             inkscape
             iterm2
             #disk-inventory-x # x86_64
