@@ -81,7 +81,8 @@ in {
             iina
             #blender # broken
             #unstable.gimp
-            gimp3
+            #gimp3
+            gimp
             inkscape
             iterm2
             #disk-inventory-x # x86_64
