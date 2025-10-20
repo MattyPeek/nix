@@ -6,12 +6,17 @@
     inputs = {
         nixpkgs.url = "github:NixOS/nixpkgs/25.05";
         nixpkgs-unstable.url = "github:NixOS/nixpkgs/nixos-unstable";
+        
         nix-darwin.url = "github:nix-darwin/nix-darwin/nix-darwin-25.05";
         nix-darwin.inputs.nixpkgs.follows = "nixpkgs";
+        
         disko.url = "github:nix-community/disko";
         disko.inputs.nixpkgs.follows = "nixpkgs";
+        
+        home-manager.url = "github:nix-community/home-manager";
+        home-manager.inputs.nixpkgs.follows = "nixpkgs";
     };
-    outputs = {self, nixpkgs, nixpkgs-unstable, nix-darwin, disko, ... }@inputs:{
+    outputs = {self, nixpkgs, nixpkgs-unstable, nix-darwin, diskoi, home-manager, ... }@inputs:{
         darwinConfigurations = {
             mcbp = nix-darwin.lib.darwinSystem {
 	            specialArgs = { inherit inputs nixpkgs-unstable nixpkgs; };
@@ -68,5 +73,13 @@
                 ];
             };
         };
+        homeConfigurations = {
+            "darwin.maty" = home-manager.lib.homeManagerConfiguration {
+                pkgs = import nixpkgs { system = "aarch64-darwin"; };
+                modules = [
+                    ./home/darwin/maty.nix
+                ];
+            }
+        }
     };
 }
