@@ -80,6 +80,6 @@
                     ./home/darwin/maty.nix
                 ];
             }
-        }
+        };
     };
 }
