@@ -16,8 +16,8 @@ in {
             awscli
             nmap
             go  
-            nodejs_23
-            nodePackages.typescript
+            #nodejs_23
+            #nodePackages.typescript
             invidious
             lynx
             w3m
