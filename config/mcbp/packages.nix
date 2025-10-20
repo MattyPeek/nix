@@ -116,7 +116,7 @@ in {
                 #"gimp"
                 "openzfs"
                 #"onyx"
-                "handbrake"
+                "handbrake-app"
                 #"unetbootin"
                 "obsidian"
                 "keyboardcleantool"
