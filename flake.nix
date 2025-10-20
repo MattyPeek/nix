@@ -16,7 +16,7 @@
         home-manager.url = "github:nix-community/home-manager";
         home-manager.inputs.nixpkgs.follows = "nixpkgs";
     };
-    outputs = {self, nixpkgs, nixpkgs-unstable, nix-darwin, diskoi, home-manager, ... }@inputs:{
+    outputs = {self, nixpkgs, nixpkgs-unstable, nix-darwin, disko, home-manager, ... }@inputs:{
         darwinConfigurations = {
             mcbp = nix-darwin.lib.darwinSystem {
 	            specialArgs = { inherit inputs nixpkgs-unstable nixpkgs; };
