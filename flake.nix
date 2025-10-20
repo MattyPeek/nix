@@ -77,7 +77,7 @@
             "darwin.maty" = home-manager.lib.homeManagerConfiguration {
                 pkgs = import nixpkgs { system = "aarch64-darwin"; };
                 modules = [
-                    ./home/darwin/maty.nix
+                    ./home/darwin/maty.nix;
                 ];
             }
         };
