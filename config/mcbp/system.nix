@@ -19,6 +19,7 @@
 
 
   system = {
+    primaryUser = "maty";
     defaults = {
       dock = {
         autohide = true;
