@@ -13,6 +13,27 @@
         "net.ipv6.conf.all.forwarding" = "1";
     };
 
+    networking.nftables.ruleset = ''
+        table inet nat {
+          chain postrouting {
+            type nat hook postrouting priority 100; policy accept;
+            # IPv4 masq example
+            ip saddr 10.0.0.0/24 oifname "enp4s0" masquerade
+
+            # IPv6 NAT66 (masquerade, but works like SNAT); use your WireGuard subnet
+            ip6 saddr fd42:42:42::/64 oifname "enp4s0" masquerade
+          }
+        }
+        table inet filter {
+          chain forward {
+            type filter hook forward priority 0; policy drop;
+            iifname "server" oifname "enp4s0" accept
+            iifname "enp4s0" oifname "server" ct state related,established accept
+          }
+          # Add other chains and rules as needed (input/output, etc)
+        }
+    '';
+
     networking.firewall = {
         enable = true;
 
