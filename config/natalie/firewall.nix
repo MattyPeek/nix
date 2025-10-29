@@ -8,6 +8,11 @@
         externalInterface = "enp4s0"; # Adjust to your WAN interface
     };
 
+    networking.sysctl = {
+        "net.ipv4.conf.all.forwarding" = "1";
+        "net.ipv6.conf.all.forwarding" = "1";
+    };
+
     networking.firewall = {
         enable = true;
 
