@@ -60,6 +60,7 @@
             yubikey-manager
             yubioath-flutter
             pcsc-tools
+            awscli
         ];
         nixpkgs = {
             config = {
