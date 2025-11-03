@@ -1,6 +1,6 @@
 { config, lib, pkgs, ... }: {
 
-    networking.networkmanager.enable = true;
+    networking.networkmanager.enable = false;
 
     networking.useDHCP = false;
 
@@ -19,8 +19,8 @@
             }];
         };
     };
-    networking.networkmanager.insertNameservers = [
-    #networking.nameservers = [
+    #networking.networkmanager.insertNameservers = [
+    networking.nameservers = [
         "1.1.1.1"
         "8.8.8.8"
         "2001:4860:4860::1111" 
