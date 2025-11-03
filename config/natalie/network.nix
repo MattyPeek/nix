@@ -26,6 +26,7 @@
         "2001:4860:4860::1111" 
         "2606:4700:4700::8888" 
     ];
+    networking.search = [ "vshosting.cz" ];
     networking.defaultGateway = { address = "78.24.8.65"; };
     networking.defaultGateway6 = { address = "2a00:1ed0:3c::1"; };
 
