@@ -86,7 +86,5 @@
 
             iifname enp3s0f0 oifname enp4s0 accept
         '';
-
-
     };
 }
