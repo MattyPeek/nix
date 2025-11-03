@@ -28,8 +28,10 @@
           chain forward {
             type filter hook forward priority 0; policy drop;
             iifname "server" oifname "enp4s0" accept
-            iifname "enp3s0f0" oifname "enp4s0" accept
             iifname "enp4s0" oifname "server" ct state related,established accept
+
+            iifname "enp3s0f0" oifname "enp4s0" accept
+            iifname "enp4s0" oifname "enp3s0f0" ct state related,established accept
           }
           # Add other chains and rules as needed (input/output, etc)
         }
@@ -45,7 +47,7 @@
         allowedTCPPortRanges = [{ from = 3000; to = 3100; }];
         allowedUDPPortRanges = [{ from = 6000; to = 6010; }];
         
-        trustedInterfaces = [ "lo" "server" "tun0" ];
+        trustedInterfaces = [ "lo" "server" "tun0" "enp3s0f0"];
         
         extraInputRules = ''
             ip saddr 10.0.0.0/8 accept
@@ -85,7 +87,7 @@
 
             ip daddr 10.0.0.2 tcp dport 4000 accept
 
-            iifname enp3s0f0 oifname enp4s0 accept
+            #iifname enp3s0f0 oifname enp4s0 accept
         '';
     };
 }
