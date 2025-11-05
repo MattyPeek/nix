@@ -101,6 +101,15 @@ in {
             python312Packages.passlib
             python312Packages.jmespath
             #matterhorn
+            autoconf
+            autoconf-archive
+            automake
+            ccache
+            cmake
+            libtool
+            nasm
+            ninja
+            pkg-config
         ];
         homebrew = {
             taps = [
@@ -126,15 +135,6 @@ in {
                 "mysql-shell"
                 #"mysql-client"
                 "android-commandlinetools"
-                "autoconf"
-                "autoconf-archive"
-                "automake"
-                "ccache"
-                "cmake"
-                "libtool"
-                "nasm"
-                "ninja"
-                "pkg-config"
             ];
             brews = [
                 "browsh"
