@@ -75,6 +75,7 @@
             description = "Matyas Pesek";
             extraGroups = [ "networkmanager" "wheel" "scard" "zrepl" ];
             packages = with pkgs; [
+                qutebrowser
                 #thunderbird
             ];
         };
