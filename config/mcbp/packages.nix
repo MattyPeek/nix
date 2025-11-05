@@ -126,6 +126,15 @@ in {
                 "mysql-shell"
                 #"mysql-client"
                 "android-commandlinetools"
+                "autoconf"
+                "autoconf-archive"
+                "automake"
+                "ccache"
+                "cmake"
+                "libtool"
+                "nasm"
+                "ninja"
+                "pkg-config"
             ];
             brews = [
                 "browsh"
